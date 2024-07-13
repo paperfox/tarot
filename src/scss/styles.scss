@@ -1,0 +1,158 @@
+@import './variables';
+@import './core';
+@import './animation';
+
+/* Buttons and Nav Tabs */
+
+.btn-close {
+  background: transparent url(../../public/images/close.svg) no-repeat center;
+  width: 2rem;
+  height: 2rem;
+  opacity: .8;
+}
+
+.btn-group > {
+  .btn-group:not(:last-child) > .btn,
+  .btn:not(:last-child):not(.dropdown-toggle) {
+    &:focus { box-shadow: none; }
+    &, &:hover, &:focus, &:active { border-right: $dashed-border; }
+  }
+
+  .btn-group:not(:first-child) > .btn,
+  :not(.btn-check) + .btn                            { border-left-style: dashed; }
+}
+
+.nav-tabs {
+  background-color: rgba(var(--nav-bg-alpha), .9);
+  font-size: 1.6rem;
+  border-bottom: none;
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+
+  .nav-link {
+    font-weight: 500;
+    color: var(--accent);
+    border-bottom: .2rem solid transparent;
+  }
+}
+
+/* Button and Nav Tab States */
+.btn-tarotcard                    { opacity: 1; }
+
+.nav-tabs .nav-link {
+  &:focus-visible { outline: $dotted-border; }
+  &.active        { color: var(--white); }
+
+  &.active,
+  &:focus,
+  &:hover,
+  &:focus-visible  {
+    background-color: rgb(var(--black));
+    border: .1rem solid transparent;
+    border-bottom: .2rem solid var(--accent);
+  }
+}
+
+/* Modals */
+.btn-close {
+  &:focus,
+  &:focus-visible {
+    box-shadow: none;
+    outline-offset: 0.1rem;
+    outline: $dotted-border;
+  }
+
+  &:hover { filter: grayscale(100%) brightness(400%); opacity: .8; }
+}
+
+.modal-header       {
+  border-bottom: none;
+  position: relative;
+
+  .btn-close {
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+  }
+}
+
+.modal-content  { background-color: var(--main-bg); }
+.modal-footer   { border-top: none; }
+.modal-header,
+.modal-footer   { justify-content: space-around; }
+.modal-art-view { height: 80vh; }
+
+/* Images */
+.paperfox-logo {
+  height: 3rem;
+  width: 3rem;
+  background: transparent url(../../public/images/paperfoxlogo.svg) no-repeat center;
+  margin-bottom: 1.5rem;
+}
+
+.list-unstyled img[src$=".svg"] {
+  height: 3.2rem; opacity: .8;
+  & :hover { opacity: 1; }
+}
+
+img[class*="_2"]                      { rotate: 180deg; }
+.info-icon                            { width: 2.4rem; } /* Info icon created by i cons from the noun project - tinyurl.com/47b8m4an */
+.flip-card,
+.build-deck,
+.deck-card-stack                      { width: calc(95vh * 0.2); }
+.instagram-link img                   { filter: invert(68%) sepia(72%) saturate(1450%) hue-rotate(355deg) brightness(91%) contrast(86%); }
+
+.instagram-formatting {
+  aspect-ratio: 1;
+  object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 991.98px) {
+  .modal-art-view { height: auto; width: 100%; }
+}
+
+@media (min-width: 768px) {
+  .side-nav {
+    position: sticky;
+    top: 4.8rem;
+    margin: 0 .5rem;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .side-nav {
+    position: fixed;
+    top: 3.6rem;
+    display: flex;
+    width: 100%;
+    background-color: rgba(var(--nav-bg-alpha), .8);
+    z-index: 1000;
+    margin: 0 -1rem;
+
+    li {
+      margin: auto;
+      text-align: center;
+
+      a {
+        margin: 1.5rem .5rem;
+        display: inline-block;
+
+        span { display: none; }
+      }
+    }
+  }
+
+  [id*="TarotCardList"] h1 { padding-top: 10rem; }
+  [id*="sectionTitle"]     { scroll-margin-top: 9rem; }
+}
+
+@media (max-width: 575.98px) {
+  .mobile-images {
+    width: auto !important;
+    max-height: 30rem;
+    margin-inline: auto;
+    display: block;
+  }
+}
