@@ -1,16 +1,9 @@
 @import './variables';
 @import './core';
+@import './modals';
 @import './animation';
 
 /* Buttons and Nav Tabs */
-
-.btn-close {
-  background: transparent url(../../public/images/close.svg) no-repeat center;
-  width: 2rem;
-  height: 2rem;
-  opacity: .8;
-}
-
 .btn-group > {
   .btn-group:not(:last-child) > .btn,
   .btn:not(:last-child):not(.dropdown-toggle) {
@@ -34,61 +27,43 @@
     font-weight: 500;
     color: var(--accent);
     border-bottom: .2rem solid transparent;
+    padding: .8rem 1.6rem;
+
+    &:focus-visible { outline: $dotted-border; }
+    &.active        { color: var(--white); }
+
+    &.active,
+    &:focus,
+    &:hover,
+    &:focus-visible  {
+      background-color: rgb(var(--black));
+      border: .1rem solid transparent;
+      border-bottom: .2rem solid var(--accent);
+    }
   }
 }
 
-/* Button and Nav Tab States */
-.btn-tarotcard                    { opacity: 1; }
+.btn-tarotcard { opacity: 1; }
 
-.nav-tabs .nav-link {
-  &:focus-visible { outline: $dotted-border; }
-  &.active        { color: var(--white); }
-
-  &.active,
-  &:focus,
-  &:hover,
-  &:focus-visible  {
-    background-color: rgb(var(--black));
-    border: .1rem solid transparent;
-    border-bottom: .2rem solid var(--accent);
-  }
-}
-
-/* Modals */
-.btn-close {
-  &:focus,
-  &:focus-visible {
-    box-shadow: none;
-    outline-offset: 0.1rem;
-    outline: $dotted-border;
-  }
-
-  &:hover { filter: grayscale(100%) brightness(400%); opacity: .8; }
-}
-
-.modal-header       {
-  border-bottom: none;
-  position: relative;
-
-  .btn-close {
-    position: absolute;
-    top: 2rem;
-    right: 2rem;
-  }
-}
-
-.modal-content  { background-color: var(--main-bg); }
-.modal-footer   { border-top: none; }
-.modal-header,
-.modal-footer   { justify-content: space-around; }
-.modal-art-view { height: 80vh; }
 
 /* Images */
 .paperfox-logo {
-  height: 3rem;
-  width: 3rem;
-  background: transparent url(../../public/images/paperfoxlogo.svg) no-repeat center;
-  margin-bottom: 1.5rem;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 1000;
+  margin: .8rem;
+  padding-bottom: .3rem;
+  border-bottom: .2rem solid transparent;
+
+  &:hover {
+    border-bottom: .2rem solid var(--accent);
+  }
+
+  img {
+    height: 3rem;
+    width: 3rem;
+  }
 }
 
 .list-unstyled img[src$=".svg"] {
@@ -101,12 +76,6 @@ img[class*="_2"]                      { rotate: 180deg; }
 .flip-card,
 .build-deck,
 .deck-card-stack                      { width: calc(95vh * 0.2); }
-.instagram-link img                   { filter: invert(68%) sepia(72%) saturate(1450%) hue-rotate(355deg) brightness(91%) contrast(86%); }
-
-.instagram-formatting {
-  aspect-ratio: 1;
-  object-fit: cover;
-}
 
 /* Responsive */
 @media (max-width: 991.98px) {

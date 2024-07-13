@@ -4,7 +4,6 @@ import MakeNumbers from './deck/CardShuffle';
 import TarotArray from './static/Tarot-content';
 import CardList from './list/CardList';
 import AboutPage from './About';
-import InstagramPage from './instagram/Instagram';
 import Footer from './Footer';
 
 function App() {
@@ -26,10 +25,10 @@ function App() {
         <Tab eventKey="TarotAboutPage" title="About">
           <AboutPage />
         </Tab>
-        {/* <Tab eventKey="InstagramFeed" title="Sketchbook">
-          <InstagramPage />
-        </Tab> */}
       </Tabs>
+      <a href="https://paperfox.github.io" className="paperfox-logo">
+        <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage"  />
+      </a>
       <Footer />
     </main>
   );
