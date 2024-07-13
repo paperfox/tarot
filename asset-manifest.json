@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tarot/static/css/main.c3472164.css",
+    "main.js": "/tarot/static/js/main.0a1c0d0d.js",
+    "static/media/paperfoxlogo.svg": "/tarot/static/media/paperfoxlogo.fd79012f7b860fdd4623.svg",
+    "index.html": "/tarot/index.html",
+    "static/media/close.svg": "/tarot/static/media/close.f237f2ad7904e038627e.svg",
+    "main.c3472164.css.map": "/tarot/static/css/main.c3472164.css.map",
+    "main.0a1c0d0d.js.map": "/tarot/static/js/main.0a1c0d0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.c3472164.css",
+    "static/js/main.0a1c0d0d.js"
+  ]
+}
