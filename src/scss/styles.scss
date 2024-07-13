@@ -73,9 +73,6 @@
 
 img[class*="_2"]                      { rotate: 180deg; }
 .info-icon                            { width: 2.4rem; } /* Info icon created by i cons from the noun project - tinyurl.com/47b8m4an */
-.flip-card,
-.build-deck,
-.deck-card-stack                      { width: calc(95vh * 0.2); }
 
 /* Responsive */
 @media (max-width: 991.98px) {

@@ -1,4 +1,8 @@
 /* Tarot Deck Card Stack */
+.flip-card,
+.build-deck,
+.deck-card-stack                      { width: calc(95vh * 0.2); }
+
 .build-deck {
   position: relative;
   height: calc(100vh * 0.32);
