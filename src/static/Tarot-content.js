@@ -193,7 +193,7 @@ function TarotArray() {
     },
     {
       cardValue: 19,
-      artStatus: 'Draft',
+      artStatus: 'Complete',
       title: 'The Sun',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

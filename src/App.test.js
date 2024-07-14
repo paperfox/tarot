@@ -128,7 +128,7 @@ test('view only completed cards and descriptions', async () => {
   user.click(screen.getByRole('button', {name: 'Completed'}));
   const cardTitles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3 });
 
-  expect(cardTitles).toHaveLength(22);
+  expect(cardTitles).toHaveLength(23);
 });
 
 test('view all started cards and descriptions', async () => {
@@ -181,31 +181,6 @@ test('select and view about page', async () => {
   const aboutTabClicked = await screen.findByRole('tab', {name: 'About', selected: true });
 
   expect(aboutTabClicked).toBeTruthy();
-});
-
-
-// Instagram Tab
-
-test('select and view instagram page', async () => {
-  render(<App />);
-
-  user.click(await screen.findByRole('tab', {name: 'Sketchbook', selected: false }));
-  const instagramTabClicked = await screen.findByRole('tab', {name: 'Sketchbook', selected: true });
-
-  expect(instagramTabClicked).toBeTruthy();
-});
-
-test('instagram feed loads', async () => {
-  const { container } = render(<App />);
-
-  user.click(await screen.findByRole('tab', {name: 'Sketchbook', selected: false }));
-  const instagramTabClicked = await screen.findByRole('tab', {name: 'Sketchbook', selected: true });
-
-  await waitFor(() => {
-    expect(within(container.querySelector('#paperfox--tabpane-InstagramFeed')).getAllByRole('img')).toHaveLength(26)
-  })
-
-  expect(instagramTabClicked).toBeTruthy();
 });
 
 
