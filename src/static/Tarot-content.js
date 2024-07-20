@@ -345,7 +345,7 @@ function TarotArray() {
     },
     {
       cardValue: 34,
-      artStatus: 'Draft',
+      artStatus: 'Complete',
       title: 'Queen of Wands',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

@@ -11,6 +11,9 @@ function App() {
 
   return (
     <main>
+      <a href="https://paperfox.github.io" className="paperfox-logo">
+        <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage" />
+      </a>
       <div className="paperfox-content">
         <Tabs
           defaultActiveKey="TarotApp"
@@ -27,9 +30,6 @@ function App() {
             <AboutPage />
           </Tab>
         </Tabs>
-        <a href="https://paperfox.github.io" className="paperfox-logo">
-          <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage"  />
-        </a>
       </div>
       <Footer />
     </main>
