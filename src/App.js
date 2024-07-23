@@ -5,9 +5,6 @@ import TarotArray from './static/Tarot-content';
 import CardList from './list/CardList';
 import AboutPage from './About';
 import Footer from './Footer';
-import ReactGA from 'react-ga4';
-
-ReactGA.initialize('Paperfox-Tarot');
 
 function App() {
   const tarotContent = TarotArray();
