@@ -33,7 +33,7 @@ function TarotArray() {
     },
     {
       cardValue: 3,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'The Empress',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

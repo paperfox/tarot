@@ -137,7 +137,7 @@ test('view all started cards and descriptions', async () => {
   user.click(screen.getByRole('button', {name: 'Started'}));
   const cardTitles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3 });
 
-  expect(cardTitles).toHaveLength(45);
+  expect(cardTitles).toHaveLength(46);
 });
 
 test('clear card filters', async () => {
