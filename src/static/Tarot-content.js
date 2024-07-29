@@ -389,7 +389,7 @@ function TarotArray() {
       title: 'Three of Cups',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
-      uprightCard: 'This is a time of celebration with your friends or community. Joyous gatherings, such as weddings, parties, or reunions are likely. There could also be creative collaborations on the horizon. Welcome the support and encouragement of friends and loved ones.',
+      uprightCard: 'This is a time of celebration with your friends or community. Joyous gatherings or reunions are likely. There could also be creative collaborations on the horizon. Welcome the support and encouragement of friends and loved ones.',
       reverseCard: 'Be cautious in your social interactions. Clouds are forming and there could be a breakdown in friendships or your social connections. Watch for trouble and cultivate greater emotional balance and stability to weather the troubles ahead with relationships intact.',
       link: 'https://www.tarotcardmeanings.net/waite-tarot-comments/waite-on-tarot-cups.htm#3'
     },
@@ -475,7 +475,7 @@ function TarotArray() {
     },
     {
       cardValue: 47,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'Knight of Cups',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

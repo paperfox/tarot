@@ -48,7 +48,7 @@
 
 /* Images */
 .paperfox-logo {
-  position: absolute;
+  position: fixed;
   top: 0;
   right: 0;
   z-index: 1010;
@@ -94,7 +94,7 @@ img[class*="_2"]                      { rotate: 180deg; }
     display: flex;
     width: 100%;
     background-color: rgba(var(--nav-bg-alpha), .8);
-    z-index: 1000;
+    z-index: 990;
     margin: 0 -1rem;
 
     li {
