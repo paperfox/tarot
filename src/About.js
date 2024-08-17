@@ -12,7 +12,7 @@ function AboutPage() {
               <p>If you're wondering about my favorite physical tarot decks, they're <a href="https://wyrmwoodgaming.com/corrupted-tarot/" target="_blank" rel="noreferrer">Corrupted Tarot Deck</a> and <a href="https://www.shadowscapes.com/Tarot/cardsmain.php?suit=0" target="_blank" rel="noreferrer">Shadowscapes Tarot Deck</a> - though there's a new Shadowscapes deck coming out, so I'm excited for that!</p>
             </div>
             <div className="mb-5">
-              <h3>About the Images</h3>
+              <h2>About the Images</h2>
               <p>Images on this site are either my own work or from the Rider-Waite-Smith Tarot Deck (which is in the public domain).</p>
               <p>My images are not for reuse or reposting, though if you want one for any reason, please reach out to me and we can probably work something out - <a href="https://www.instagram.com/paperfoxmakesart/" target="_blank" rel="noreferrer">@paperfoxmakesart</a> on instagram.</p>
               <p>Many of the characters in my Tarot images belong to others, please check out their work!</p>
