@@ -27,7 +27,7 @@ function CardModal({ reverseCard, dataImg, dataContent }) {
         <Modal.Body>
           <div className="row">
             <div className="col-md-4 col-sm-5">
-              <img src={'/tarot/images/cards/' + dataImg + '.jpg'} className="w-100 rounded mb-4 mobile-images" alt={'Image of ' + dataContent.title + ' card'}/>
+              <img src={'/tarot/images/cards/' + dataImg + '.avif'} className="w-100 rounded mb-4 mobile-images" alt={'Image of ' + dataContent.title + ' card'}/>
             </div>
             <div className="col">
               <h3>{dataContent.uprightTitle}</h3>

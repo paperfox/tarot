@@ -12,7 +12,7 @@ function ImageModal({ dataImg, dataContent }) {
   return (
     <Fragment>
       <Button variant="tertiary" className="float-end btn-tarotcard" onClick={handleShow} aria-label={`More information about ` + dataContent.title}>
-        <img src={'/tarot/images/cards/' + dataImg + '.jpg'} className="w-100 rounded" alt={'Image of ' + dataContent.title + ' card'} />
+        <img src={'/tarot/images/cards/' + dataImg + '.avif'} className="w-100 rounded" alt={'Image of ' + dataContent.title + ' card'} />
       </Button>
 
       <Modal
@@ -26,7 +26,12 @@ function ImageModal({ dataImg, dataContent }) {
         <Modal.Body>
           <div className="row justify-content-center">
             <div className="col-auto mb-2">
-              <img src={'/tarot/images/cards/' + dataImg + '.jpg'} className="modal-art-view rounded" alt={'Image of ' + dataContent.title + ' card'}/>
+            {/* <picture>
+              <source media="(max-width: 799px)" srcset={'/tarot/images/cards/' + dataImg + '-sm.jpg'}  />
+              <source media="(min-width: 800px)" srcset={'/tarot/images/cards/' + dataImg + '.jpg'} />
+              <img src={'/tarot/images/cards/' + dataImg + '.avif'} className="modal-art-view rounded" alt={'Image of ' + dataContent.title + ' card'}/>
+            </picture> */}
+              <img src={'/tarot/images/cards/' + dataImg + '.avif'} className="modal-art-view rounded" alt={'Image of ' + dataContent.title + ' card'}/>
             </div>
           </div>
         </Modal.Body>

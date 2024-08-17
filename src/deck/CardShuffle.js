@@ -61,9 +61,9 @@ function MakeNumbers({ tarotContent }) {
             <div className="col-auto">
               <div className="mx-4 build-deck">
                 {Array.from({ length: 5 }, (_, i) => i).map(el => (
-                  <img src='/tarot/images/cards/back.jpg' key={el} className="deck-card-stack" alt=""/>
+                  <img src='/tarot/images/cards/back.avif' key={el} className="deck-card-stack" alt=""/>
                 ))}
-                <img src='/tarot/images/cards/back.jpg' className={`deck-card-stack ${animateCard}`} alt="" id="top"/>
+                <img src='/tarot/images/cards/back.avif' className={`deck-card-stack ${animateCard}`} alt="" id="top"/>
               </div>
             </div>
           </div>
