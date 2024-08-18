@@ -18,7 +18,7 @@ function TarotCard({ reverseCard, dataImg, dataContent, layoutTitles }) {
 
   return (
     <div className="col-auto" id={'tarot-content-' + dataImg + reverseCard}>
-      <div className={`card mb-4 ${showCard}`}>
+      <div className={`card ${showCard}`}>
         <div className="card-body">
           <h2 className="p">{layoutTitles}</h2>
           <div className="mb-3">

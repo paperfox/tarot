@@ -62,6 +62,11 @@
     &.draw-animation-1 { transform: translate(60%, 26.5rem); }
     &.draw-animation-2 { transform: translate(119%, 26.5rem); }
   }
+  @media (max-width: 404.98px) {
+    &.draw-animation-0 { transform: translate(0, 130%); }
+    &.draw-animation-1 { transform: translate(60%, 130%); }
+    &.draw-animation-2 { transform: translate(0%, 280%); }
+  }
 }
 
 #top.draw-animation-time {

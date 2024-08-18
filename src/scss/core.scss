@@ -118,3 +118,8 @@ a,
     box-shadow: inset 0px 0px 0px 1px var(--accent);
   }
 }
+
+.btn:first-child:active,
+.btn.active,
+.btn:disabled,
+.btn.disabled { border-color: transparent; }
