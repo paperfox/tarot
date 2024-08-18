@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/tarot/static/css/main.2f7926ff.css",
+    "main.css": "/tarot/static/css/main.0c64e4d6.css",
     "main.js": "/tarot/static/js/main.11e60329.js",
     "index.html": "/tarot/index.html",
     "static/media/close.svg": "/tarot/static/media/close.f237f2ad7904e038627e.svg",
-    "main.2f7926ff.css.map": "/tarot/static/css/main.2f7926ff.css.map",
+    "main.0c64e4d6.css.map": "/tarot/static/css/main.0c64e4d6.css.map",
     "main.11e60329.js.map": "/tarot/static/js/main.11e60329.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f7926ff.css",
+    "static/css/main.0c64e4d6.css",
     "static/js/main.11e60329.js"
   ]
 }
