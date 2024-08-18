@@ -1,7 +1,7 @@
 /* Tarot Deck Card Stack */
 .flip-card,
 .build-deck,
-.deck-card-stack                      { width: 17rem; }
+.deck-card-stack { width: 17rem; }
 
 .build-deck {
   position: relative;
@@ -26,11 +26,11 @@
 .flip-card-inner {
   transition: transform 0.6s;
   transform-style: preserve-3d;
-  box-shadow: 0 4px 8px 0 rgba(var(--black), .2);
+  box-shadow: 0 .4rem .8rem 0 rgba(var(--black), .2);
 }
 
 .flip-card  {
-  perspective: 1000px;
+  perspective: 100rem;
 
   .flip-card-back,
   .flip-card-inner.show,
@@ -63,7 +63,7 @@
     &.draw-animation-1 { transform: translate(60%, 26.5rem); }
     &.draw-animation-2 { transform: translate(119%, 26.5rem); }
   }
-  @media (max-width: 404.98px) {
+  @media (max-width: 431.98px) {
     &.draw-animation-0 { transform: translate(0, 130%); }
     &.draw-animation-1 { transform: translate(60%, 130%); }
     &.draw-animation-2 { transform: translate(0%, 280%); }

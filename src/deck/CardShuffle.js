@@ -56,7 +56,7 @@ function MakeNumbers({ tarotContent }) {
     <div className="container-xxl text-center">
       <h1>Three Card Draw</h1>
       <div className="mb-4">
-        <Button className="tarot-deck" variant="tertiary" onClick={handleClick} aria-live="polite" aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'} disabled={counter === 3 ? true : false}>
+        <Button className="tarot-deck" variant="link" onClick={handleClick} aria-live="polite" aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'} disabled={counter === 3 ? true : false}>
           <div className="row justify-content-center">
             <div className="col-auto">
               <div className="mx-4 build-deck">
@@ -78,13 +78,12 @@ function MakeNumbers({ tarotContent }) {
               dataImg={exampleCard.tarotText.cardValue}
               dataContent={exampleCard.tarotText}
               reverseCard={exampleCard.reverseCard}
-              // showCard={showCard}
             />
           )
         })}
       </div>
 
-      <Button variant="secondary" className="mb-4" onClick={handleClickReset}>
+      <Button variant="primary" className="mb-4" onClick={handleClickReset}>
         Reset
       </Button>
     </div>

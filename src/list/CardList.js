@@ -39,13 +39,13 @@ function CardList({ tarotContent }) {
         <div className="col-auto">
           <ButtonToolbar aria-label="Toolbar with button groups">
             <ButtonGroup className="me-2">
-              <Button variant="secondary" onClick={handleClickComplete}>Completed</Button>
-              <Button variant="secondary" onClick={handleClickDraft}>Started</Button>
-              <Button variant="secondary" onClick={handleClickNotStarted}>Placeholders</Button>
+              <Button variant="primary" onClick={handleClickComplete}>Completed</Button>
+              <Button variant="primary" onClick={handleClickDraft}>Started</Button>
+              <Button variant="primary" onClick={handleClickNotStarted}>Placeholders</Button>
             </ButtonGroup>
 
             <ButtonGroup>
-              <Button variant="secondary" onClick={handleClickReset} aria-label="Clear Filters">X</Button>
+              <Button variant="primary" onClick={handleClickReset} aria-label="Clear Filters">X</Button>
             </ButtonGroup>
           </ButtonToolbar>
           <p className='text-center'>Cards matching filter: {filteredCards.length}</p>

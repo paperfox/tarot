@@ -18,7 +18,7 @@ function App() {
         <Tabs
           defaultActiveKey="TarotApp"
           id="paperfox-"
-          className="mb-3"
+          className="mb-3 w-100"
         >
           <Tab eventKey="TarotApp" title="Deck">
             <MakeNumbers tarotContent={tarotContent} />
