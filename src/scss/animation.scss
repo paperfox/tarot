@@ -44,7 +44,7 @@
 /* Animate draw */
 #top {
   transform: translate();
-  transition-duration: 45ms;
+  transition-duration: 450ms;
   opacity: 1;
 
   &.draw-animation-0 { transform: translate(0, 36.1rem); }

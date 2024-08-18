@@ -41,7 +41,7 @@ function CardList({ tarotContent }) {
             <ButtonGroup className="me-2">
               <Button variant="secondary" onClick={handleClickComplete}>Completed</Button>
               <Button variant="secondary" onClick={handleClickDraft}>Started</Button>
-              <Button variant="secondary" onClick={handleClickNotStarted}>RWS</Button>
+              <Button variant="secondary" onClick={handleClickNotStarted}>Placeholders</Button>
             </ButtonGroup>
 
             <ButtonGroup>
