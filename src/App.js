@@ -10,11 +10,11 @@ function App() {
   const tarotContent = TarotArray();
 
   return (
-    <main>
-      <a href="https://paperfox.github.io" className="paperfox-logo">
-        <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage" />
-      </a>
-      <div className="paperfox-content">
+    <>
+      <main className="paperfox-content">
+        <a href="https://paperfox.github.io" className="paperfox-logo">
+          <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage" />
+        </a>
         <Tabs
           defaultActiveKey="TarotApp"
           id="paperfox-"
@@ -30,9 +30,9 @@ function App() {
             <AboutPage />
           </Tab>
         </Tabs>
-      </div>
+      </main>
       <Footer />
-    </main>
+    </>
   );
 }
 

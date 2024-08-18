@@ -37,9 +37,10 @@
   &:active .flip-card-inner { transform: rotateX(180deg); }
 }
 
-.flip-card-back                    { height: 0; }
-.flip-card-front                   { border: .1rem solid var(--border-tarot-card); }
-.flip-card-front, .flip-card-back  { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
+.flip-card-back  { height: 0; }
+.flip-card-front { border: .1rem solid var(--border-tarot-card); }
+.flip-card-front,
+.flip-card-back  { -webkit-backface-visibility: hidden; backface-visibility: hidden; }
 
 /* Animate draw */
 #top {

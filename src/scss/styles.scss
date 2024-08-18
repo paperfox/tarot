@@ -8,12 +8,11 @@
 .btn-group > {
   .btn-group:not(:last-child) > .btn,
   .btn:not(:last-child):not(.dropdown-toggle) {
-    &:focus { box-shadow: none; }
     &, &:hover, &:focus, &:active { border-right: $dashed-border; }
   }
 
   .btn-group:not(:first-child) > .btn,
-  :not(.btn-check) + .btn                            { border-left-style: dashed; }
+  :not(.btn-check) + .btn { border-left: $dashed-border; }
 }
 
 .nav-tabs {
@@ -113,13 +112,4 @@ img[class*="_2"]                      { rotate: 180deg; }
 
   [id*="TarotCardList"] h1 { padding-top: 10rem; }
   [id*="sectionTitle"]     { scroll-margin-top: 9rem; }
-}
-
-@media (max-width: 575.98px) {
-  .mobile-images {
-    width: auto !important;
-    max-height: 30rem;
-    margin-inline: auto;
-    display: block;
-  }
 }

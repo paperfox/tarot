@@ -1,14 +1,11 @@
-/* Modals */
-
 .btn-close {
   background: transparent url(../../public/images/close.svg) no-repeat center;
   width: 2rem;
   height: 2rem;
-  opacity: .8;
+  opacity: 1;
 
   &:focus,
   &:focus-visible {
-    box-shadow: none;
     outline-offset: 0.1rem;
     outline: $dotted-border;
   }
