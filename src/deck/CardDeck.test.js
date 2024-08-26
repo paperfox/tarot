@@ -2,13 +2,13 @@ import { render, screen, act, fireEvent, waitFor, waitForElementToBeRemoved } fr
 import user from '@testing-library/user-event'
 import userEvent from '@testing-library/user-event'
 import '@testing-library/jest-dom'
-import MakeNumbers from './CardShuffle'
+import CardDeck from './CardDeck'
 import TarotArray from '../static/Tarot-content'
 
 const tarotContent = TarotArray();
 
 test('draw a card from the deck', async () => {
-  render(<MakeNumbers tarotContent={tarotContent} />);
+  render(<CardDeck tarotContent={tarotContent} />);
 
   user.click(await screen.findByLabelText('Draw card from Tarot Deck'));
 
@@ -18,7 +18,7 @@ test('draw a card from the deck', async () => {
 });
 
 test('draw 3 cards from the deck', async () => {
-  render(<MakeNumbers tarotContent={tarotContent} />);
+  render(<CardDeck tarotContent={tarotContent} />);
 
   // draw 3 cards
   user.click(await screen.findByLabelText(/from Tarot Deck/i));
@@ -31,7 +31,7 @@ test('draw 3 cards from the deck', async () => {
 });
 
 test('deck disabled after drawing 3 cards', async () => {
-  render(<MakeNumbers tarotContent={tarotContent} />);
+  render(<CardDeck tarotContent={tarotContent} />);
 
   // draw 3 cards
   user.click(await screen.findByLabelText(/from Tarot Deck/i));
@@ -44,7 +44,7 @@ test('deck disabled after drawing 3 cards', async () => {
 });
 
 test('drawn card can be flipped over to view face', async () => {
-  const { container } = render(<MakeNumbers tarotContent={tarotContent} />);
+  const { container } = render(<CardDeck tarotContent={tarotContent} />);
 
   user.click(await screen.findByLabelText('Draw card from Tarot Deck'));
 
@@ -55,7 +55,7 @@ test('drawn card can be flipped over to view face', async () => {
 });
 
 test('open drawn card details modal', async () => {
-  render(<MakeNumbers tarotContent={tarotContent} />);
+  render(<CardDeck tarotContent={tarotContent} />);
 
   user.click(await screen.findByLabelText('Draw card from Tarot Deck'));
   user.click(screen.getByTestId('info-modal-trigger'));
@@ -66,7 +66,7 @@ test('open drawn card details modal', async () => {
 });
 
 test('drawn card details modal closes', async () => {
-  render(<MakeNumbers tarotContent={tarotContent} />);
+  render(<CardDeck tarotContent={tarotContent} />);
 
   user.click(await screen.findByLabelText('Draw card from Tarot Deck'));
   user.click(screen.getByTestId('info-modal-trigger'));
@@ -79,7 +79,7 @@ test('drawn card details modal closes', async () => {
 });
 
 test('deck is reset to shuffled and undrawn', async () => {
-  render(<MakeNumbers tarotContent={tarotContent} />);
+  render(<CardDeck tarotContent={tarotContent} />);
 
   user.click(await screen.findByLabelText('Draw card from Tarot Deck'));
 

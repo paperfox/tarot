@@ -2,7 +2,7 @@ import React, {  useState } from 'react';
 import CardModal from './CardModal';
 import Button from 'react-bootstrap/Button';
 
-function TarotCard({ reverseCard, dataImg, dataContent, layoutTitles }) {
+function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
   const [cardFace, setCardFace] = useState('');
   const [showCard, setShowCard] = useState('');
   const [cardAriaLabel, setCardAriaLabel] = useState('Reveal card');
@@ -26,7 +26,7 @@ function TarotCard({ reverseCard, dataImg, dataContent, layoutTitles }) {
               <div className="flip-card">
                 <div className={'flip-card-inner ' + cardFace}>
                   <div className="flip-card-front">
-                      <img src='/tarot/images/cards/back.avif' className='card-img-top' alt="Back of Tarot Card"/>
+                      <img src='/tarot/images/cards//back.avif' className='card-img-top' alt="Back of Tarot Card"/>
                   </div>
                   <div className="flip-card-back">
                       <img src={'/tarot/images/cards/' + dataImg + '.avif'} className={'card-img-top tarot-' + dataImg + reverseCard} alt=""/>
@@ -42,4 +42,4 @@ function TarotCard({ reverseCard, dataImg, dataContent, layoutTitles }) {
   );
 }
 
-export default TarotCard;
+export default CardTarot;

@@ -42,7 +42,7 @@ test('select and view about page', async () => {
 test('count wands not started', async () => {
   const { container } = render(<App />);
 
-  user.click(screen.getByRole('button', {name: 'RWS'}));
+  user.click(screen.getByRole('button', {name: 'Placeholders'}));
   const cardTitlesWands = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of wands/i });
 
   expect(cardTitlesWands).toHaveLength(5);
@@ -51,7 +51,7 @@ test('count wands not started', async () => {
 test('count cups not started', async () => {
   const { container } = render(<App />);
 
-  user.click(screen.getByRole('button', {name: 'RWS'}));
+  user.click(screen.getByRole('button', {name: 'Placeholders'}));
   const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of cups/i });
 
   expect(cardTitlesCups).toHaveLength(5);
@@ -60,7 +60,7 @@ test('count cups not started', async () => {
 test('count swords not started', async () => {
   const { container } = render(<App />);
 
-  user.click(screen.getByRole('button', {name: 'RWS'}));
+  user.click(screen.getByRole('button', {name: 'Placeholders'}));
   const cardTitlesSwords = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of swords/i });
 
   expect(cardTitlesSwords).toHaveLength(10);
@@ -69,7 +69,7 @@ test('count swords not started', async () => {
 test('count pentacles not started', async () => {
   const { container } = render(<App />);
 
-  user.click(screen.getByRole('button', {name: 'RWS'}));
+  user.click(screen.getByRole('button', {name: 'Placeholders'}));
   const cardTitlesPentacles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of pentacles/i });
 
   expect(cardTitlesPentacles).toHaveLength(6);

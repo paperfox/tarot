@@ -37,6 +37,7 @@ function CardList({ tarotContent }) {
       <h1 className="text-center">Complete Card Listing</h1>
       <div className="row justify-content-center mb-4">
         <div className="col-auto">
+          <p>Filter cards based on status of artwork</p>
           <ButtonToolbar aria-label="Toolbar with button groups">
             <ButtonGroup className="me-2">
               <Button variant="primary" onClick={handleClickComplete}>Completed</Button>
@@ -48,7 +49,7 @@ function CardList({ tarotContent }) {
               <Button variant="primary" onClick={handleClickReset} aria-label="Clear Filters">X</Button>
             </ButtonGroup>
           </ButtonToolbar>
-          <p className='text-center'>Cards matching filter: {filteredCards.length}</p>
+          <p className="text-center"><small>Cards matching filter: {filteredCards.length}</small></p>
         </div>
       </div>
 

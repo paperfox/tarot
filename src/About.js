@@ -1,6 +1,6 @@
 import React from 'react';
 
-function AboutPage() {
+function About() {
   return (
     <div className="container-xxl">
         <h1 className="text-center">About The App</h1>
@@ -36,4 +36,4 @@ function AboutPage() {
   );
 }
 
-export default AboutPage;
+export default About;

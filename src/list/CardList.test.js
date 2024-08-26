@@ -37,7 +37,7 @@ test('clear card filters', async () => {
 test('open card image view modal', async () => {
   render(<CardList tarotContent={tarotContent} />);
 
-  user.click(await screen.findByLabelText('More information about The Fool'));
+  user.click(await screen.findByLabelText('View larger image of The Fool card'));
 
   const closeButton = await screen.findByRole('button', {name: 'Close'});
 
@@ -47,7 +47,7 @@ test('open card image view modal', async () => {
 test('drawn card image view modal closes', async () => {
   render(<CardList tarotContent={tarotContent} />);
 
-  user.click(await screen.findByLabelText('More information about The Fool'));
+  user.click(await screen.findByLabelText('View larger image of The Fool card'));
 
   await waitFor(() => screen.getByRole('button', { name: /close/i }));
   fireEvent.click(screen.getByRole('button', { name: /close/i }));

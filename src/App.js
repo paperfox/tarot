@@ -1,9 +1,9 @@
 import React from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
-import MakeNumbers from './deck/CardShuffle';
+import CardDeck from './deck/CardDeck';
 import TarotArray from './static/Tarot-content';
 import CardList from './list/CardList';
-import AboutPage from './About';
+import About from './About';
 import Footer from './Footer';
 
 function App() {
@@ -21,13 +21,13 @@ function App() {
           className="mb-3 w-100"
         >
           <Tab eventKey="TarotApp" title="Deck">
-            <MakeNumbers tarotContent={tarotContent} />
+            <CardDeck tarotContent={tarotContent} />
           </Tab>
           <Tab eventKey="TarotCardList" title="Card List">
             <CardList tarotContent={tarotContent} />
           </Tab>
           <Tab eventKey="TarotAboutPage" title="About">
-            <AboutPage />
+            <About />
           </Tab>
         </Tabs>
       </main>

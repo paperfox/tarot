@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
-import TarotCard from './Card';
+import CardTarot from './CardTarot';
 import TitlesArray from '../static/Layout-titles';
 
-function MakeNumbers({ tarotContent }) {
+function CardDeck({ tarotContent }) {
   const [createCard, setCreateCard] = useState([]);
   const [animateCard, setAnimateCard] = useState('')
   const [deckLabel, setDeckLabel] = useState('')
@@ -61,7 +61,7 @@ function MakeNumbers({ tarotContent }) {
             <div className="col-auto">
               <div className="mx-4 build-deck">
                 {Array.from({ length: 5 }, (_, i) => i).map(el => (
-                  <img src='/tarot/images/cards/back.avif' key={el} className="deck-card-stack" alt=""/>
+                  <img src='/tarot/images/cards//back.avif' key={el} className="deck-card-stack" alt=""/>
                 ))}
                 <img src='/tarot/images/cards/back.avif' className={`deck-card-stack ${animateCard}`} alt="" id="top"/>
               </div>
@@ -72,7 +72,7 @@ function MakeNumbers({ tarotContent }) {
       <div className="row justify-content-center mb-4">
         {createCard.map((exampleCard, index) => {
           return (
-            <TarotCard
+            <CardTarot
               layoutTitles={drawTitles[index].title}
               key={exampleCard.tarotText.cardValue}
               dataImg={exampleCard.tarotText.cardValue}
@@ -90,4 +90,4 @@ function MakeNumbers({ tarotContent }) {
   );
 }
 
-export default MakeNumbers;
+export default CardDeck;
