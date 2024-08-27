@@ -6,18 +6,19 @@ import Modal from 'react-bootstrap/Modal';
 function CardModal({ dataImg, dataContent }) {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShowModal = () => {
+    setShow(!show)
+  };
 
   return (
     <Fragment>
-      <Button variant="link" className="float-end" onClick={handleShow} aria-label={'More information about ' + dataContent.title} data-testid="info-modal-trigger">
+      <Button variant="link" className="float-end" onClick={handleShowModal} aria-label={'More information about ' + dataContent.title} data-testid="info-modal-trigger">
         <img src='/images/info-icon-by-i-con.svg' className="info-icon" alt="info icon"/>
       </Button>
 
       <Modal
         show={show}
-        onHide={handleClose}
+        onHide={handleShowModal}
         centered
         size="lg"
       >

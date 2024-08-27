@@ -12,9 +12,9 @@ function App() {
   return (
     <>
       <main className="paperfox-content">
-        {/* <a href="https://paperfox.github.io" className="paperfox-logo">
+        <a href="https://paperfox.github.io" className="paperfox-logo">
           <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage" />
-        </a> */}
+        </a>
         <Tabs
           defaultActiveKey="TarotApp"
           id="paperfox-"

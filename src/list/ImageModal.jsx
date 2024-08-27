@@ -6,18 +6,19 @@ import Modal from 'react-bootstrap/Modal';
 function ImageModal({ dataImg, dataContent }) {
   const [show, setShow] = useState(false);
 
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const handleShowModal = () => {
+    setShow(!show)
+  };
 
   return (
     <Fragment>
-      <Button variant="link" className="float-end btn-tarotcard" onClick={handleShow} aria-label={'View larger image of ' + dataContent.title + ' card'}>
+      <Button variant="link" className="float-end btn-tarotcard" onClick={handleShowModal} aria-label={'View larger image of ' + dataContent.title + ' card'}>
         <img src={'/tarot/images/cards/' + dataImg + '.avif'} className="w-100 rounded" alt={'Image of ' + dataContent.title + ' card'} />
       </Button>
 
       <Modal
         show={show}
-        onHide={handleClose}
+        onHide={handleShowModal}
         centered
       >
         <Modal.Header closeButton>
