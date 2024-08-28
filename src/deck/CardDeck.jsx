@@ -20,6 +20,7 @@ function CardDeck({ tarotContent }) {
     let randomBinary = Math.floor(Math.random() * 2 + 1);
 
     if (deck.length > 75) {
+      // creates drawn card in either upright or reversed position
       setCreateCard([...createCard,
         {
           id: randomInt,
@@ -27,15 +28,20 @@ function CardDeck({ tarotContent }) {
           tarotText: deck[randomInt]
         }
       ]);
+
+      // animate on card draw
       setAnimateCard(`draw-animation-${counter}`);
       setTimeout(() => {
         setAnimateCard('draw-animation-time');
       }, 500);
 
+      // removes drawn card from deck
       deck.splice(randomInt, 1)
 
+      // counts cards drawn
       setCounter(counter + 1)
 
+      // enhances screenreader experience
       if (counter === 0) {
         setDeckLabel('another ')
       } else if (counter === 1) {

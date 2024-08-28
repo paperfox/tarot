@@ -1,5 +1,5 @@
 import React, {  useState } from 'react';
-import CardModal from './CardModal';
+import CardModal from '../CardModal';
 import Button from 'react-bootstrap/Button';
 
 function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
@@ -35,7 +35,7 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
               </div>
             </Button>
           </div>
-          <CardModal reverseCard={reverseCard} dataImg={dataImg} dataContent={dataContent} />
+          <CardModal reverseCard={reverseCard} dataImg={dataImg} dataContent={dataContent} modalDeck={true} />
         </div>
       </div>
     </div>
