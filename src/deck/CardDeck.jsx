@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import CardTarot from './CardTarot';
-import TitlesArray from '../static/Layout-titles';
 
 function CardDeck({ tarotContent }) {
   const [createCard, setCreateCard] = useState([]);
@@ -10,7 +9,20 @@ function CardDeck({ tarotContent }) {
   const [counter, setCounter] = useState(0)
   const [deck, setDeck] = useState([...tarotContent])
 
-  const drawTitles = TitlesArray();
+  const drawTitles = [
+    {
+      id: 'three-card-past',
+      title: 'Past',
+    },
+    {
+      id: 'three-card-present',
+      title: 'Present',
+    },
+    {
+      id: 'three-card-future',
+      title: 'Future',
+    }
+  ];
 
   const handleClick = () => {
     let min = 1;
