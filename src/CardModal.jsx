@@ -12,11 +12,11 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
   return (
     <>
       <Button variant="link" className={`${modalDeck ? 'float-end btn-tarotcard' : 'float-end'}`} onClick={handleShowModal} aria-label={`${modalDeck ? `More information about ${dataContent.title}` : `View larger image of ${dataContent.title}`}`} data-testid="info-modal-trigger">
-        {modalDeck == false  || (
+        {modalDeck === false  || (
           <img src='/images/info-icon-by-i-con.svg' className="info-icon" alt="info icon"/>
         )}
 
-        {modalDeck == true  || (
+        {modalDeck === true  || (
           <img src={'/tarot/images/cards/' + dataImg + '.avif'} className="w-100 rounded" alt={'Image of ' + dataContent.title + ' card'} />
         )}
       </Button>
@@ -42,7 +42,9 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
                 <p className="mb-5">{dataContent.uprightCard}</p>
                 <h3>{dataContent.reverseTitle}</h3>
                 <p>{dataContent.reverseCard}</p>
-                {/* <a href={dataContent.link} target="_blank" rel="noreferrer">add links for book fan art</a> */}
+                {dataContent.link  && (
+                  <p className="pt-4 text-right"><small>Characters from <a href={dataContent.link} target="_blank" rel="noreferrer">{dataContent.linkText}</a></small></p>
+                )}
               </div>
             )}
           </div>
