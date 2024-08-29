@@ -31,7 +31,7 @@ function CardList({ tarotContent }) {
       tarotContent.filter(sort => sort.artStatus)
     )
   }
-
+   const minorTitle = (<span>Minor Arcana -</span>);
   // builds a mixed array of my descriptions and cards
   // yea I'll find a better way to do this, but I like keeping the 2 lists separate...
   const tarotFull = [
@@ -71,11 +71,9 @@ function CardList({ tarotContent }) {
       <div className="row justify-content-center mb-4">
         <div className="col-lg-2 col-md-3">
           <ul className="list-unstyled h4 side-nav">
-            <li><a href="#Major-sectionTitle">Major Arcana</a></li>
-            <li><a href="#Wands-sectionTitle"><span>Minor Arcana -</span> Wands</a></li>
-            <li><a href="#Cups-sectionTitle"><span>Minor Arcana -</span> Cups</a></li>
-            <li><a href="#Swords-sectionTitle"><span>Minor Arcana -</span> Swords</a></li>
-            <li><a href="#Pentacles-sectionTitle"><span>Minor Arcana -</span> Pentacles</a></li>
+            {Array.of('Major', 'Wands', 'Cups', 'Swords', 'Pentacles').map(suit => (
+              <li key={suit}><a href={`#${suit}-sectionTitle`}>{suit === 'Major' ? suit + ' Arcana' : <><span>Minor Arcana - </span>{suit}</>}</a></li>
+            ))}
           </ul>
         </div>
         <div className="col-lg-10 col-md-9">
