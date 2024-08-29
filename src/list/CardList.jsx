@@ -10,27 +10,42 @@ function CardList({ tarotContent }) {
 
   const handleClickComplete = () => {
     setFilteredCards(
-      tarotContent.filter(t=>t.artStatus === 'Complete')
+      tarotContent.filter(sort => sort.artStatus === 'Complete')
     )
   }
 
   const handleClickDraft = () => {
     setFilteredCards(
-      tarotContent.filter(t=>t.artStatus !== 'None')
+      tarotContent.filter(sort => sort.artStatus !== 'None')
     )
   }
 
   const handleClickNotStarted = () => {
     setFilteredCards(
-      tarotContent.filter(t=>t.artStatus === 'None')
+      tarotContent.filter(sort => sort.artStatus === 'None')
     )
   }
 
   const handleClickReset = () => {
     setFilteredCards(
-      tarotContent.filter(t=>t.artStatus)
+      tarotContent.filter(sort => sort.artStatus)
     )
   }
+
+  // builds a mixed array of my descriptions and cards
+  // yea I'll find a better way to do this, but I like keeping the 2 lists separate...
+  const tarotFull = [
+    ...sectionContent.slice(0,1),
+    ...tarotContent.slice(0,22),
+    ...sectionContent.slice(1,2),
+    ...tarotContent.slice(22,36),
+    ...sectionContent.slice(2,3),
+    ...tarotContent.slice(36,50),
+    ...sectionContent.slice(3,4),
+    ...tarotContent.slice(50,64),
+    ...sectionContent.slice(4,5),
+    ...tarotContent.slice(64,78),
+  ];
 
   return (
     <div className="container-xxl">
@@ -64,24 +79,13 @@ function CardList({ tarotContent }) {
           </ul>
         </div>
         <div className="col-lg-10 col-md-9">
-          {sectionContent.filter(desc => desc.id.includes('Major')).map(sectionHeading => (
-            <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />
-          ))}
-          {filteredCards.filter(desc => desc.cardValue <= 21).map(exampleCard => (
-            <CardDesc dataContent={exampleCard} key={exampleCard.cardValue}/>
-          ))}
-          {/* if i do the index stuff below this section can go away */}
-
-          {sectionContent.slice(1).map((sectionHeading, index) => (
+          {tarotFull.map((sectionHeading) => (
             <Fragment key={sectionHeading.id}>
-              <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />
-              {/* filteredCards[index].map - everthing else goes here - */}
+              {sectionHeading.id && <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />}
               {filteredCards.filter(desc => desc.title.includes(sectionHeading.title)).map(exampleCard => (
                 <CardDesc dataContent={exampleCard} key={exampleCard.cardValue}/>
               ))}
             </Fragment>
-            // if I put everything inside it's own sections in the array I should be  able to use index to simplify this further because the
-            // index will be the unique Identify for each section insead of doing it by words
           ))}
         </div>
       </div>

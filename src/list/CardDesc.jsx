@@ -14,9 +14,7 @@ function CardDesc({ dataContent }) {
           <p className="mb-5">{dataContent.uprightCard}</p>
           <h4>{dataContent.reverseTitle}</h4>
           <p>{dataContent.reverseCard}</p>
-          {/* <h3>About the Image</h3>
-          <p>{dataContent.bkgInfo}</p> */}
-          {/* <a href={dataContent.link} target="_blank" rel="noreferrer">Rider-Waite Description</a> */}
+          {/* <a href={dataContent.link} target="_blank" rel="noreferrer">add links for book fan art</a> */}
         </div>
       </div>
       <div className="row justify-content-center">

@@ -5,8 +5,8 @@ function SectionDesc({ sectionData }) {
     <div className="row justify-content-center">
       <div className="col-xl-9 col-lg-10 mb-4">
         <div id={sectionData.id}>
-          <h2>{sectionData.title}</h2>
-          <p>{sectionData.description}</p>
+          <h2>{sectionData.sectionTitle}</h2>
+          {sectionData.description && <p>{sectionData.description}</p>}
         </div>
       </div>
     </div>
