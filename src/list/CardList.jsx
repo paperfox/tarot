@@ -8,29 +8,21 @@ function CardList({ tarotContent }) {
   const [filteredCards, setFilteredCards] = useState(tarotContent)
   const sectionContent = SectionArray();
 
-  const handleClickComplete = () => {
+  const handleClickFilter = (status) => {
     setFilteredCards(
-      tarotContent.filter(sort => sort.artStatus === 'Complete')
-    )
-  }
-
-  const handleClickDraft = () => {
-    setFilteredCards(
-      tarotContent.filter(sort => sort.artStatus !== 'None')
-    )
-  }
-
-  const handleClickNotStarted = () => {
-    setFilteredCards(
-      tarotContent.filter(sort => sort.artStatus === 'None')
+      tarotContent.filter(sort => sort.artStatus === status)
     )
   }
 
   const handleClickReset = () => {
-    setFilteredCards(
-      tarotContent.filter(sort => sort.artStatus)
-    )
+    setFilteredCards(tarotContent)
   }
+
+  const filterButtons = [
+    { label: 'Completed', status: 'Complete' },
+    { label: 'Drafts', status: 'Draft' },
+    { label: 'Placeholders', status: 'None' }
+  ]
 
   // builds a mixed array of my descriptions and cards
   // yea I'll find a better way to do this, but I like keeping the 2 lists separate...
@@ -52,13 +44,15 @@ function CardList({ tarotContent }) {
       <h1 className="text-center">Complete Card Listing</h1>
       <div className="row justify-content-center mb-4">
         <div className="col-auto">
-          <p>Filter cards based on status of artwork</p>
+          <p className="text-center">Filter cards based on state of artwork</p>
           <ButtonToolbar aria-label="Toolbar with button groups">
-            <ButtonGroup className="me-2">
-              <Button variant="primary" onClick={handleClickComplete}>Completed</Button>
-              <Button variant="primary" onClick={handleClickDraft}>Started</Button>
-              <Button variant="primary" onClick={handleClickNotStarted}>Placeholders</Button>
-            </ButtonGroup>
+          <ButtonGroup className="me-2">
+            {filterButtons.map(button => (
+              <Button variant="primary" onClick={() => handleClickFilter(button.status)} key={button.label}>
+                {button.label}
+              </Button>
+            ))}
+          </ButtonGroup>
 
             <ButtonGroup>
               <Button variant="primary" onClick={handleClickReset} aria-label="Clear Filters">X</Button>
