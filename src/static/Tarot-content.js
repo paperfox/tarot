@@ -112,6 +112,8 @@ function TarotArray() {
       reverseTitle: 'Reversed',
       uprightCard: 'Balance, fairness, and impartiality are the core concepts of this card. It\'s a moment when you\'re faced with important decisions or choices that require a fair and just assessment. Seek truth, be just, and hold all accountable for their actions - including yourself. Weigh the pros and cons of a situation carefully before making a decision. Find balance. Make ethically sound and morally upright decisions based on reason and careful consideration rather than emotion or personal bias. Justice can also symbolize the need for legal or ethical considerations and may indicate the resolution of a conflict or dispute.  Act with integrity and strive for fairness and equality in all aspects of your life.',
       reverseCard: 'Decisions are being made with significant bias. Externally - this may be someone getting unjust advantages or outcomes. Internally - you may be prioritizing some areas over others at a significant cost. Look to regain balance. Avoiding accountability or responsibility causes trouble in the long run. Reflect and make amends if needed. In reverse, this is also the card of legal complications - seek advice and make sure to protect your rights.',
+      link: 'https://a.co/d/fcku0Yy',
+      linkText: 'Godclads',
     },
     {
       cardValue: 12,
@@ -195,8 +197,6 @@ function TarotArray() {
       reverseTitle: 'Reversed',
       uprightCard: 'Take action and make significant changes in your life. Based on a better understanding of your own purpose and values, you may have to make some hard choices. Let go of old patterns and beliefs that no longer serve you and experience a sense of liberation and release. Every action has a consequence and you are responsible for the choices you have made and continue to make - accept those consequences. Forgive yourself, then move forward. The karma you create today awaits you in the future - both positive and negative. The Judgement card encourages you to trust in your inner guidance and to embrace the transformative power of change, even if it feels uncomfortable or challenging at first.',
       reverseCard: 'When met with choices, taking no action is a choice on its own. It\'s crucial to keep moving forward even when difficult decisions must be made. Seeking the easiest path, the simplest path, and the most comfortable path, is easy, but it leads you to where you already are. It doesn\'t lead you forward.',
-      link: 'https://a.co/d/fcku0Yy',
-      linkText: 'Godclads',
     },
     {
       cardValue: 21,
