@@ -106,7 +106,7 @@ function TarotArray() {
     },
     {
       cardValue: 11,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'Justice',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -189,7 +189,7 @@ function TarotArray() {
     },
     {
       cardValue: 20,
-      artStatus: 'Draft',
+      artStatus: 'None',
       title: 'Judgement',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
