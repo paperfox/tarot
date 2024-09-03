@@ -78,10 +78,11 @@ function CardDeck({ tarotContent }) {
           <div className="row justify-content-center">
             <div className="col-auto">
               <div className="mx-4 build-deck">
+              <p>Draw a Card</p>
                 {Array.from({ length: 5 }, (_, i) => i).map(el => (
-                  <img src='/tarot/images/cards/back.avif' key={el} className="deck-card-stack" alt=""/>
+                  <img src='/tarot/images/cards/back.svg' key={el} className="deck-card-stack" alt=""/>
                 ))}
-                <img src='/tarot/images/cards/back.avif' className={`deck-card-stack ${animateCard}`} alt="" id="top"/>
+                <img src='/tarot/images/cards/back.svg' className={`deck-card-stack ${animateCard}`} alt="" id="top"/>
               </div>
             </div>
           </div>
