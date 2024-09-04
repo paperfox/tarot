@@ -44,14 +44,16 @@
 
 .btn-tarotcard { opacity: 1; }
 
+.nav-tabs li:first-of-type { margin-left: 6.4rem; }
+
 /* Images */
 .paperfox-logo {
   position: fixed;
   top: 0;
-  right: 0;
+  left: 0;
   z-index: $zindex-offcanvas-backdrop;
   margin: .2rem;
-  padding: .6rem .6rem .3rem;
+  padding: .6rem 1rem .3rem;
   border-bottom: .2rem solid transparent;
 
   &:hover { border-bottom: .2rem solid var(--accent); }
