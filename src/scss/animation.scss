@@ -77,17 +77,18 @@
   &.draw-animation-1 { transform: translate(62%, 36.1rem); }
   &.draw-animation-2 { transform: translate(123%, 36.1rem); }
 
-  @media (max-width: 991.98px) {
+  @include media-breakpoint-down(lg) {
     &.draw-animation-0 { transform: translate(0, 31.7rem); }
     &.draw-animation-1 { transform: translate(63%, 31.7rem); }
     &.draw-animation-2 { transform: translate(127%, 31.7rem); }
   }
 
-  @media (max-width: 575.98px) {
+  @include media-breakpoint-down(sm) {
     &.draw-animation-0 { transform: translate(0, 26.5rem); }
     &.draw-animation-1 { transform: translate(60%, 26.5rem); }
     &.draw-animation-2 { transform: translate(119%, 26.5rem); }
   }
+
   @media (max-width: 431.98px) {
     &.draw-animation-0 { transform: translate(0, 130%); }
     &.draw-animation-1 { transform: translate(60%, 130%); }
@@ -123,18 +124,21 @@
 }
 
 /* Responsive */
-@media (min-width: 576px) and (max-width: 991.98px) {
+@include media-breakpoint-between(sm, lg) {
   .flip-card,
   .build-deck,
   .deck-card-stack { width: 15rem; }
   .build-deck      { height: 26rem; }
 }
 
-@media (max-width: 575.98px) {
+@media (max-width: 599.98px) {
+  #paperfox--tabpane-TarotApp .container-xxl { padding: 0; }
+}
+
+@include media-breakpoint-down(sm) {
   .flip-card,
   .build-deck,
   .deck-card-stack      { width: 12rem; }
   .build-deck           { height: 20.8rem; }
   [id*="TarotApp"] .row { --bs-gutter-x: 0; }
-  #paperfox--tabpane-TarotApp .container-xxl { padding: 0; }
 }
