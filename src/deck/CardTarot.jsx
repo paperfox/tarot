@@ -1,4 +1,4 @@
-import React, {  useState } from 'react';
+import { useState } from 'react';
 import CardModal from '../CardModal';
 import Button from 'react-bootstrap/Button';
 

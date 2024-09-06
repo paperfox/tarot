@@ -1,4 +1,4 @@
-import React, { useState, Fragment } from 'react';
+import { useState, Fragment } from 'react';
 import CardDesc from './CardDesc';
 import SectionArray from '../static/Section-content';
 import SectionDesc from './SectionDesc';

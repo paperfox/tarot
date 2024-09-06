@@ -1,12 +1,9 @@
-import React from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import CardDeck from './deck/CardDeck';
 import TarotArray from './static/Tarot-content';
 import CardList from './list/CardList';
 import About from './About';
 import Footer from './Footer';
-// Allowing tests for long files
-/* eslint max-lines: off */
 
 function App() {
   const tarotContent = TarotArray();

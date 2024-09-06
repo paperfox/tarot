@@ -1,4 +1,3 @@
-import React from 'react';
 import CardModal from '../CardModal';
 
 function CardDesc({ dataContent }) {
