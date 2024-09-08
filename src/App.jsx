@@ -2,6 +2,7 @@ import { Tab, Tabs } from 'react-bootstrap';
 import CardDeck from './deck/CardDeck';
 import TarotArray from './static/Tarot-content';
 import CardList from './list/CardList';
+import CardDaily from './daily/CardDaily';
 import About from './About';
 import Footer from './Footer';
 
@@ -21,6 +22,9 @@ function App() {
         >
           <Tab eventKey="TarotApp" title="Deck">
             <CardDeck tarotContent={tarotContent} />
+          </Tab>
+          <Tab eventKey="TarotDailyCard" title="Daily">
+            <CardDaily tarotContent={tarotContent} />
           </Tab>
           <Tab eventKey="TarotCardList" title="Card List">
             <CardList tarotContent={tarotContent} />
