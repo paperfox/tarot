@@ -5,7 +5,6 @@ import Markdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
 function CardDaily({ tarotContent }) {
-  const genAI = new GoogleGenerativeAI('AIzaSyD263avpbNrg16PM2kIS6iKj9JW01XjUeM');
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
   const [aiResponse, setResponse] = useState('');
   const [loading, setLoading] = useState(false);
@@ -38,10 +37,16 @@ function CardDaily({ tarotContent }) {
 
     setSearch(deck[randomInt].title);
     setCardNumber(deck[randomInt].cardValue);
-    console.log(search, cardNumber, randomValue, cardAriaLabel);
+    // console.log(search, cardNumber, randomValue, cardAriaLabel);
   }, []);
 
   const handleClick = () => {
+    // THERE'S A BETTER WAY TO DO THIS, but it's sunday so I'll come back to it later
+    let demand = document.querySelectorAll('.daily-description');
+    demand.forEach(el => {
+      el.classList.add('width')
+    });
+
     setCardAriaLabel(search);
     aiRun2();
     setCardFace('show');
@@ -55,16 +60,14 @@ function CardDaily({ tarotContent }) {
     const response = result.response;
     const text = response.text();
     setResponse(text);
-
-    console.log(prompt, text);
-    console.log('api', search, cardNumber, randomValue, randomValueNumber)
   }
 
   return (
     <div className="container-xxl">
       <h1 className="text-center">Daily Card for {date}</h1>
+      {disabled == false ? <p className="text-center">Reveal today's card below</p> : ''}
       <div className="row justify-content-center mb-4">
-        <div className="col-lg-10 col-md-9">
+        <div className="col-md-10">
           <div className="row justify-content-center mb-4">
             <div className="col-auto mb-4">
               <Button variant="link" className="btn-daily" onClick={() => handleClick()} aria-live="polite" aria-label={cardAriaLabel} disabled={disabled}>
@@ -80,7 +83,7 @@ function CardDaily({ tarotContent }) {
                 </div>
               </Button>
             </div>
-            <div className="col-sm mb-4">
+            <div className="col-auto mb-4 daily-description demand-2">
               {/* {loading == true && search != '' ?
                 <p style={{ margin: '30px 0' }}>Loading ...</p>
                 :

@@ -106,6 +106,7 @@ a,
     box-shadow: none;
   }
 
+  &.btn-daily { margin-inline: .8rem; }
   &.btn-daily:disabled { opacity: 1; }
 }
 

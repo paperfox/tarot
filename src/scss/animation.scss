@@ -123,12 +123,38 @@
   }
 }
 
+/* Daily Card Page */
+.daily-description {
+  transition: width 0.3s ease-in;
+  transition-duration: 1000ms;
+}
+
+.demand-2 {
+  background-color: rgba(var(--black), 0.09);
+  border-color: rgba(var(--black), 0.125);
+  width: 0;
+  padding: 0;
+}
+
+.daily-description.width {
+  width: 60%;
+  padding: 1.6rem;
+
+  div {
+    width: 90%;
+    margin: 2.4rem auto;
+  }
+
+  div *:last-child { margin-bottom: 0; }
+}
+
 /* Responsive */
 @include media-breakpoint-between(sm, lg) {
   .flip-card,
   .build-deck,
   .deck-card-stack { width: 15rem; }
   .build-deck      { height: 26rem; }
+  .demand.full-width { width: 80%; }
 }
 
 @media (max-width: 599.98px) {
@@ -141,4 +167,5 @@
   .deck-card-stack      { width: 12rem; }
   .build-deck           { height: 20.8rem; }
   [id*="TarotApp"] .row { --bs-gutter-x: 0; }
+  .demand.full-width { width: 100%; }
 }
