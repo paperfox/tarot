@@ -154,7 +154,7 @@
   .build-deck,
   .deck-card-stack { width: 15rem; }
   .build-deck      { height: 26rem; }
-  .demand.full-width { width: 80%; }
+  .daily-description.width { width: 65%; }
 }
 
 @media (max-width: 599.98px) {
@@ -167,5 +167,5 @@
   .deck-card-stack      { width: 12rem; }
   .build-deck           { height: 20.8rem; }
   [id*="TarotApp"] .row { --bs-gutter-x: 0; }
-  .demand.full-width { width: 100%; }
+  .daily-description.width { width: 100%; }
 }

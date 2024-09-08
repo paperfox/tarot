@@ -68,7 +68,7 @@ function CardDaily({ tarotContent }) {
       <h1 className="text-center">Daily Card for {date}</h1>
       {disabled == false ? <p className="text-center">Reveal today's card below</p> : ''}
       <div className="row justify-content-center mb-4">
-        <div className="col-md-10">
+        <div className="col-md-12 col-lg-10">
           <div className="row justify-content-center mb-4">
             <div className="col-auto mb-4">
               <Button variant="link" className="btn-daily" onClick={() => handleClick()} aria-live="polite" aria-label={cardAriaLabel} disabled={disabled}>
