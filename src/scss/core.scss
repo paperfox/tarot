@@ -69,7 +69,8 @@ small        { font-size: .75em; }
 p,
 .p,
 h4,
-a            { font-size: 1.6rem; }
+ul li          { font-size: 1.6rem; }
+a            { font-size: inherit; }
 .btn         { font-size: 1.4rem; font-weight: 500; }
 p,
 .p,
@@ -104,6 +105,9 @@ a,
     text-decoration-color: var(--link);
     box-shadow: none;
   }
+
+  &.btn-daily { margin-inline: .8rem; }
+  &.btn-daily:disabled { opacity: 1; }
 }
 
 .btn.btn-primary {

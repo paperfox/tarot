@@ -1,5 +1,3 @@
-import React from 'react';
-
 function SectionDesc({ sectionData }) {
   return (
     <div className="row justify-content-center">

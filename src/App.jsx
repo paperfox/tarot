@@ -1,12 +1,10 @@
-import React from 'react';
 import { Tab, Tabs } from 'react-bootstrap';
 import CardDeck from './deck/CardDeck';
 import TarotArray from './static/Tarot-content';
 import CardList from './list/CardList';
+import CardDaily from './daily/CardDaily';
 import About from './About';
 import Footer from './Footer';
-// Allowing tests for long files
-/* eslint max-lines: off */
 
 function App() {
   const tarotContent = TarotArray();
@@ -14,7 +12,7 @@ function App() {
   return (
     <>
       <main className="paperfox-content">
-        <a href="https://paperfox.github.io" className="paperfox-logo">
+        <a href="https://paperfox.github.io" className="paperfox-logo" tabIndex={0}>
           <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage" />
         </a>
         <Tabs
@@ -24,6 +22,9 @@ function App() {
         >
           <Tab eventKey="TarotApp" title="Deck">
             <CardDeck tarotContent={tarotContent} />
+          </Tab>
+          <Tab eventKey="TarotDailyCard" title="Daily">
+            <CardDaily tarotContent={tarotContent} />
           </Tab>
           <Tab eventKey="TarotCardList" title="Card List">
             <CardList tarotContent={tarotContent} />
