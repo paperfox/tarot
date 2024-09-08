@@ -8,7 +8,6 @@ function CardDaily({ tarotContent }) {
   const genAI = new GoogleGenerativeAI(config.MY_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
   const [aiResponse, setResponse] = useState('');
-  const [loading, setLoading] = useState(false);
   const [search, setSearch] = useState('');
   const [deck, setDeck] = useState([...tarotContent])
   const [createCard, setCreateCard] = useState([]);
@@ -17,10 +16,12 @@ function CardDaily({ tarotContent }) {
   const [cardNumber, setCardNumber] = useState('');
   const [disabled, setDisabled] = useState(false);
 
-  let randomBinary = Math.floor(Math.random() * 2 + 1);
-  var randomValue = randomBinary === 1 ? 'upright' : 'reversed';
+  var loading = disabled === true ? ' skeleton-loading' : '';
+  // need to fix upright/reversed bug
+  // let randomBinary = Math.floor(Math.random() * 2 + 1);
+  // var randomValue = randomBinary === 1 ? 'upright' : 'reversed';
   // var randomValue = Math.random() < 0.5 ? 'upright' : 'reversed';
-  var randomValueNumber = randomValue === 'upright' ? 1 : 2;
+  // var randomValueNumber = randomValue === 'upright' ? 1 : 2;
   let date = new Date().toLocaleDateString();
 
   useEffect(() => {
@@ -85,14 +86,7 @@ function CardDaily({ tarotContent }) {
               </Button>
             </div>
             <div className="col-auto mb-4 daily-description demand-2">
-              {/* {loading == true && search != '' ?
-                <p style={{ margin: '30px 0' }}>Loading ...</p>
-                :
-                <div>
-                  <Markdown remarkPlugins={[remarkGfm]}>{aiResponse}</Markdown>
-                </div>
-              } */}
-              <div>
+              <div className={loading}>
                 <Markdown remarkPlugins={[remarkGfm]}>{aiResponse}</Markdown>
               </div>
             </div>
