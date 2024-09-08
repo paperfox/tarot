@@ -5,7 +5,7 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 function CardDaily({ tarotContent }) {
-  const genAI = new GoogleGenerativeAI(import.meta.env.VITE_GEMINI_API_KEY);
+  const genAI = new GoogleGenerativeAI(config.MY_KEY);
   const model = genAI.getGenerativeModel({ model: "gemini-pro" });
   const [aiResponse, setResponse] = useState('');
   const [loading, setLoading] = useState(false);

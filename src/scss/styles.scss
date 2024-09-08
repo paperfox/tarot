@@ -89,7 +89,7 @@ img[class*="_2"] { rotate: 180deg; }
     width: 100%;
     background-color: rgba(var(--nav-bg-alpha), .8);
     z-index: $zindex-sticky;
-    margin: 0 -1rem;
+    margin: 0 -1.6rem;
 
     li {
       margin: auto;
@@ -105,4 +105,9 @@ img[class*="_2"] { rotate: 180deg; }
 
   [id*="TarotCardList"] h1 { padding-top: 10rem; }
   [id*="sectionTitle"]     { scroll-margin-top: 9rem; }
+}
+
+@include media-breakpoint-down(sm) {
+  .nav-tabs .nav-link { padding: .8rem .8rem; }
+  .side-nav li a { font-size: 1.5rem; }
 }
