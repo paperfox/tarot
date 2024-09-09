@@ -19,13 +19,16 @@ function About() {
             <p>Looking to connect? You can find me in any of these places.</p>
             <ul className="list-unstyled d-flex justify-content-center">
               <li className="m-3">
-                  <a href="https://www.instagram.com/paperfoxmakesart/" target="_blank" rel="noreferrer"><img src="../images/instagramlogo.svg" alt="instagram" /></a>
+                  <a href="https://www.instagram.com/paperfoxmakesart/" target="_blank" rel="noreferrer"><img src="../images/instagramlogo.svg" alt="Instagram" /></a>
               </li>
               <li className="m-3">
-                <a href="https://cara.app/paperfox" target="_blank" rel="noreferrer"><img src="../images/cara-app-logo-circle-White.svg" alt="cara" /></a>
+                <a href="https://cara.app/paperfox" target="_blank" rel="noreferrer"><img src="../images/cara-app-logo-circle-White.svg" alt="Cara" /></a>
               </li>
               <li className="m-3">
-                  <a href="https://github.com/paperfox" target="_blank" rel="noreferrer"><img src="../images/github-mark.svg" alt="github"/></a>
+                  <a href="https://github.com/paperfox" target="_blank" rel="noreferrer"><img src="../images/github-mark.svg" alt="GitHub"/></a>
+              </li>
+              <li className="m-3">
+                  <a href="https://www.linkedin.com/in/nathaliegarfinkle/" target="_blank" rel="noreferrer"><img src="../images/linkedinlogo.svg" alt="LinkedIn"/></a>
               </li>
           </ul>
           </div>
