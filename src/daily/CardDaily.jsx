@@ -5,8 +5,9 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 function CardDaily({ tarotContent }) {
-  const genAI = new GoogleGenerativeAI(config.MY_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  var valUrl = 'https://paperfox-pfdtc.web.val.run';
+
+  const [apiKey, setApiKey] = useState([]);
   const [aiResponse, setResponse] = useState('');
   const [search, setSearch] = useState('');
   const [deck, setDeck] = useState([...tarotContent])
@@ -15,6 +16,14 @@ function CardDaily({ tarotContent }) {
   const [cardAriaLabel, setCardAriaLabel] = useState('Reveal card');
   const [cardNumber, setCardNumber] = useState('');
   const [disabled, setDisabled] = useState(false);
+
+  const genAI = new GoogleGenerativeAI(apiKey.MY_KEY);
+  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+
+  useEffect(() => {
+    fetch(valUrl).then(res => res.json())
+    .then((data) => { setApiKey(data); });
+  }, [valUrl]);
 
   var loading = disabled === true ? ' skeleton-loading' : '';
   // need to fix upright/reversed bug
