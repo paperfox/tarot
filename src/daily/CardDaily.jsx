@@ -84,7 +84,7 @@ function CardDaily({ tarotContent }) {
       <div className="row justify-content-center mb-4">
         <div className="col-md-12 col-lg-10">
           <div className="row justify-content-center mb-4">
-            <div className="col-auto mb-4">
+            <div className="col-sm-auto mb-4">
               <Button
                 variant="link"
                 className="btn-daily"
@@ -111,6 +111,13 @@ function CardDaily({ tarotContent }) {
             </div>
             <div className="col-auto mb-4 daily-description demand-2">
               <div className={loading}>
+                {disabled == true ? (
+                  <span className="visually-hidden" aria-live="polite" aria-busy="true">
+                    Daily card reading for {search} is loading.
+                  </span>
+                ) : (
+                  ''
+                )}
                 <Markdown remarkPlugins={[remarkGfm]}>{aiResponse}</Markdown>
               </div>
             </div>

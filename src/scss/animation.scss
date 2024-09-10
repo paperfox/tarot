@@ -153,6 +153,8 @@
   box-shadow: 0 0 .4rem .8rem rgba(var(--black), .1);
   height: 78%;
 
+  &:has(p) .visually-hidden { display: none; }
+
   &:has(p) {
     animation: none;
     box-shadow: none;
@@ -184,6 +186,8 @@
   .deck-card-stack         { width: 12rem; }
   .build-deck              { height: 20.8rem; }
   [id*="TarotApp"] .row    { --bs-gutter-x: 0; }
+  .btn.btn-link.btn-daily,
   .daily-description.width { width: 100%; }
   .skeleton-loading        { height: .8rem; }
+  .btn-daily .flip-card    { margin: auto; }
 }
