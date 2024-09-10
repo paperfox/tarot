@@ -4,10 +4,10 @@ import CardTarot from './CardTarot';
 
 function CardDeck({ tarotContent }) {
   const [createCard, setCreateCard] = useState([]);
-  const [animateCard, setAnimateCard] = useState('')
-  const [deckLabel, setDeckLabel] = useState('')
-  const [counter, setCounter] = useState(0)
-  const [deck, setDeck] = useState([...tarotContent])
+  const [animateCard, setAnimateCard] = useState('');
+  const [deckLabel, setDeckLabel] = useState('');
+  const [counter, setCounter] = useState(0);
+  const [deck, setDeck] = useState([...tarotContent]);
 
   const drawTitles = [
     {
@@ -21,7 +21,7 @@ function CardDeck({ tarotContent }) {
     {
       id: 'three-card-future',
       title: 'Future',
-    }
+    },
   ];
 
   const handleClick = () => {
@@ -33,12 +33,13 @@ function CardDeck({ tarotContent }) {
 
     if (deck.length > 75) {
       // creates drawn card in either upright or reversed position
-      setCreateCard([...createCard,
+      setCreateCard([
+        ...createCard,
         {
           id: randomInt,
           reverseCard: '_' + randomBinary,
-          tarotText: deck[randomInt]
-        }
+          tarotText: deck[randomInt],
+        },
       ]);
 
       // animate on card draw
@@ -48,41 +49,48 @@ function CardDeck({ tarotContent }) {
       }, 500);
 
       // removes drawn card from deck
-      deck.splice(randomInt, 1)
+      deck.splice(randomInt, 1);
 
       // counts cards drawn
-      setCounter(counter + 1)
+      setCounter(counter + 1);
 
       // enhances screenreader experience
       if (counter === 0) {
-        setDeckLabel('another ')
+        setDeckLabel('another ');
       } else if (counter === 1) {
-        setDeckLabel('final ')
+        setDeckLabel('final ');
       }
     }
-  }
+  };
 
   const handleClickReset = () => {
-    setCreateCard([])
-    setAnimateCard('')
-    setCounter(0)
-    setDeckLabel('')
-    setDeck([...tarotContent])
-  }
+    setCreateCard([]);
+    setAnimateCard('');
+    setCounter(0);
+    setDeckLabel('');
+    setDeck([...tarotContent]);
+  };
 
   return (
     <div className="container-xxl text-center">
       <h1>Three Card Draw</h1>
       <div className="mb-4">
-        <Button className="tarot-deck" variant="link" onClick={handleClick} aria-live="polite" aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'} disabled={counter === 3 ? true : false}>
+        <Button
+          className="tarot-deck"
+          variant="link"
+          onClick={handleClick}
+          aria-live="polite"
+          aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'}
+          disabled={counter === 3 ? true : false}
+        >
           <div className="row justify-content-center">
             <div className="col-auto">
               <div className="mx-4 build-deck">
-              <p>Draw a Card</p>
-                {Array.from({ length: 5 }, (_, i) => i).map(el => (
-                  <img src='/tarot/images/cards/back.svg' key={el} className="deck-card-stack" alt=""/>
+                <p>Draw a Card</p>
+                {Array.from({ length: 5 }, (_, i) => i).map((el) => (
+                  <img src="/tarot/images/cards/back.svg" key={el} className="deck-card-stack" alt="" />
                 ))}
-                <img src='/tarot/images/cards/back.svg' className={`deck-card-stack ${animateCard}`} alt="" id="top"/>
+                <img src="/tarot/images/cards/back.svg" className={`deck-card-stack ${animateCard}`} alt="" id="top" />
               </div>
             </div>
           </div>
@@ -98,7 +106,7 @@ function CardDeck({ tarotContent }) {
               dataContent={exampleCard.tarotText}
               reverseCard={exampleCard.reverseCard}
             />
-          )
+          );
         })}
       </div>
 

@@ -5,10 +5,10 @@ import userEvent from '@testing-library/user-event';
 import App from './App';
 
 describe('App loads and has content', () => {
-  it ('renders without crashing', () => {
+  it('renders without crashing', () => {
     const { container } = render(<App />);
     expect(container).toBeInTheDocument();
-  })
+  });
 
   it('loads and shows deck', () => {
     render(<App />);
@@ -21,9 +21,11 @@ describe('App loads and has content', () => {
 test('select tab and view full list of cards and descriptions', async () => {
   const { container } = render(<App />);
 
-  user.click(await screen.findByRole('tab', {name: 'Card List', selected: false }));
-  const aboutTabClicked = await screen.findByRole('tab', {name: 'Card List', selected: true });
-  const cardTitles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3 });
+  user.click(await screen.findByRole('tab', { name: 'Card List', selected: false }));
+  const aboutTabClicked = await screen.findByRole('tab', { name: 'Card List', selected: true });
+  const cardTitles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
+    level: 3,
+  });
 
   expect(aboutTabClicked).toBeTruthy();
   expect(cardTitles).toHaveLength(78);
@@ -33,8 +35,8 @@ test('select tab and view full list of cards and descriptions', async () => {
 test('select and view about page', async () => {
   render(<App />);
 
-  user.click(await screen.findByRole('tab', {name: 'About', selected: false }));
-  const aboutTabClicked = await screen.findByRole('tab', {name: 'About', selected: true });
+  user.click(await screen.findByRole('tab', { name: 'About', selected: false }));
+  const aboutTabClicked = await screen.findByRole('tab', { name: 'About', selected: true });
 
   expect(aboutTabClicked).toBeTruthy();
 });
@@ -44,36 +46,48 @@ describe('Count how many cards are left to draw', () => {
   it('wands not started', async () => {
     const { container } = render(<App />);
 
-    await waitFor(() => userEvent.click(screen.getByRole('button', {name: 'Placeholders'})));
-    const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of wands/i });
+    await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Placeholders' })));
+    const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
+      level: 3,
+      name: /of wands/i,
+    });
 
     expect(cardTitlesCups).toHaveLength(5);
-  })
+  });
 
   it('cups not started', async () => {
     const { container } = render(<App />);
 
-    await waitFor(() => userEvent.click(screen.getByRole('button', {name: 'Placeholders'})));
-    const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of cups/i });
+    await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Placeholders' })));
+    const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
+      level: 3,
+      name: /of cups/i,
+    });
 
     expect(cardTitlesCups).toHaveLength(5);
-  })
+  });
 
   it('swords not started', async () => {
     const { container } = render(<App />);
 
-    await waitFor(() => userEvent.click(screen.getByRole('button', {name: 'Placeholders'})));
-    const cardTitlesSwords = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of swords/i });
+    await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Placeholders' })));
+    const cardTitlesSwords = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole(
+      'heading',
+      { level: 3, name: /of swords/i }
+    );
 
     expect(cardTitlesSwords).toHaveLength(10);
-  })
+  });
 
   it('pentacles not started', async () => {
     const { container } = render(<App />);
 
-    await waitFor(() => userEvent.click(screen.getByRole('button', {name: 'Placeholders'})));
-    const cardTitlesPentacles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', { level: 3, name: /of pentacles/i });
+    await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Placeholders' })));
+    const cardTitlesPentacles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole(
+      'heading',
+      { level: 3, name: /of pentacles/i }
+    );
 
     expect(cardTitlesPentacles).toHaveLength(6);
-  })
+  });
 });

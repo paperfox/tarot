@@ -27,7 +27,6 @@ test('draw 3 cards from the deck', async () => {
   const spreadTitles = screen.getAllByRole('heading', { level: 2 });
 
   expect(spreadTitles).toHaveLength(3);
-
 });
 
 test('deck disabled after drawing 3 cards', async () => {
@@ -48,7 +47,7 @@ test('drawn card can be flipped over to view face', async () => {
 
   await waitFor(() => userEvent.click(screen.queryByLabelText('Draw card from Tarot Deck')));
 
-  const cardView = await screen.findByRole('button', {name: 'Reveal card'});
+  const cardView = await screen.findByRole('button', { name: 'Reveal card' });
   await waitFor(() => userEvent.click(cardView));
 
   expect(container.querySelector('.flip-card-inner.show')).toBeTruthy();
@@ -60,7 +59,7 @@ test('open drawn card details modal', async () => {
   await waitFor(() => userEvent.click(screen.queryByLabelText('Draw card from Tarot Deck')));
   await waitFor(() => userEvent.click(screen.queryByTestId('info-modal-trigger')));
 
-  const closeButton = await screen.findByRole('button', {name: 'Close'});
+  const closeButton = await screen.findByRole('button', { name: 'Close' });
 
   expect(closeButton).toBeTruthy();
 });
@@ -82,13 +81,13 @@ test('deck is reset to shuffled and undrawn', async () => {
   render(<CardDeck tarotContent={tarotContent} />);
 
   await waitFor(() => userEvent.click(screen.queryByLabelText('Draw card from Tarot Deck')));
-  const cardInfo = screen.findByRole('heading', {name: 'Past'});
+  const cardInfo = screen.findByRole('heading', { name: 'Past' });
   expect(cardInfo).toBeTruthy();
 
   const resetButton = screen.getByRole('button', { name: /Reset/i });
 
-  await screen.findByRole('heading', {name: 'Past'});
+  await screen.findByRole('heading', { name: 'Past' });
   await userEvent.click(resetButton);
 
-  expect(screen.queryByRole('heading', {name: 'Past'})).not.toBeInTheDocument();
+  expect(screen.queryByRole('heading', { name: 'Past' })).not.toBeInTheDocument();
 });

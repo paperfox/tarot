@@ -13,6 +13,7 @@ dist
 dist-ssr
 .env
 *.local
+.prettierrc
 
 # Editor directories and files
 .vscode/*

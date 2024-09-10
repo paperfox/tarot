@@ -12,5 +12,3 @@ function SectionDesc({ sectionData }) {
 }
 
 export default SectionDesc;
-
-

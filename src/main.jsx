@@ -8,4 +8,4 @@ createRoot(document.getElementById('paperfox-content')).render(
   <StrictMode>
     <App />
   </StrictMode>
-)
+);

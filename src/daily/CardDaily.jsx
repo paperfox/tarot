@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { GoogleGenerativeAI } from "@google/generative-ai";
+import { useState, useEffect } from 'react';
+import { GoogleGenerativeAI } from '@google/generative-ai';
 import Button from 'react-bootstrap/Button';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
@@ -10,7 +10,7 @@ function CardDaily({ tarotContent }) {
   const [apiKey, setApiKey] = useState([]);
   const [aiResponse, setResponse] = useState('');
   const [search, setSearch] = useState('');
-  const [deck, setDeck] = useState([...tarotContent])
+  const [deck, setDeck] = useState([...tarotContent]);
   const [createCard, setCreateCard] = useState([]);
   const [cardFace, setCardFace] = useState('');
   const [cardAriaLabel, setCardAriaLabel] = useState('Reveal card');
@@ -18,14 +18,17 @@ function CardDaily({ tarotContent }) {
   const [disabled, setDisabled] = useState(false);
 
   const genAI = new GoogleGenerativeAI(apiKey.MY_KEY);
-  const model = genAI.getGenerativeModel({ model: "gemini-pro" });
+  const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
 
   useEffect(() => {
-    fetch(valUrl).then(res => res.json())
-    .then((data) => { setApiKey(data); });
+    fetch(valUrl)
+      .then((res) => res.json())
+      .then((data) => {
+        setApiKey(data);
+      });
   }, [valUrl]);
 
-  var loading = disabled === true ? ' skeleton-loading' : '';
+  var loading = disabled === true ? 'skeleton-loading' : '';
   // need to fix upright/reversed bug
   // let randomBinary = Math.floor(Math.random() * 2 + 1);
   // var randomValue = randomBinary === 1 ? 'upright' : 'reversed';
@@ -39,11 +42,12 @@ function CardDaily({ tarotContent }) {
     let randomInt = Math.floor(Math.random() * (max - min));
 
     // creates drawn card in either upright or reversed position
-    setCreateCard([...createCard,
+    setCreateCard([
+      ...createCard,
       {
         id: randomInt,
-        tarotText: deck[randomInt]
-      }
+        tarotText: deck[randomInt],
+      },
     ]);
 
     setSearch(deck[randomInt].title);
@@ -53,16 +57,16 @@ function CardDaily({ tarotContent }) {
 
   const handleClick = () => {
     // THERE'S A BETTER WAY TO DO THIS, but it's sunday so I'll come back to it later
-    let demand = document.querySelectorAll('.daily-description');
-    demand.forEach(el => {
-      el.classList.add('width')
+    let demand = document.querySelectorAll('.daily-description'); // add tests starting here
+    demand.forEach((el) => {
+      el.classList.add('width');
     });
 
     setCardAriaLabel(search);
     aiRun2();
     setCardFace('show');
     setDisabled(true);
-  }
+  };
 
   // Generative AI Call fetch
   const aiRun2 = async () => {
@@ -71,8 +75,8 @@ function CardDaily({ tarotContent }) {
     const response = result.response;
     const text = response.text();
     setResponse(text);
-  }
-
+    console.log(text);
+  }; // end testing section
   return (
     <div className="container-xxl">
       <h1 className="text-center">Daily Card for {date}</h1>
@@ -81,14 +85,25 @@ function CardDaily({ tarotContent }) {
         <div className="col-md-12 col-lg-10">
           <div className="row justify-content-center mb-4">
             <div className="col-auto mb-4">
-              <Button variant="link" className="btn-daily" onClick={() => handleClick()} aria-live="polite" aria-label={cardAriaLabel} disabled={disabled}>
+              <Button
+                variant="link"
+                className="btn-daily"
+                onClick={() => handleClick()}
+                aria-live="polite"
+                aria-label={cardAriaLabel}
+                disabled={disabled}
+              >
                 <div className="flip-card">
                   <div className={'flip-card-inner ' + cardFace}>
                     <div className="flip-card-front">
-                        <img src='/tarot/images/cards/back.svg' className='card-img-top' alt="Back of Tarot Card"/>
+                      <img src="/tarot/images/cards/back.svg" className="card-img-top" alt="Back of Tarot Card" />
                     </div>
                     <div className="flip-card-back">
-                        <img src={'/tarot/images/cards/' + cardNumber + '.avif'} className={'card-img-top tarot-' + cardNumber} aria-label={search} />
+                      <img
+                        src={'/tarot/images/cards/' + cardNumber + '.avif'}
+                        className={'card-img-top tarot-' + cardNumber}
+                        aria-label={search}
+                      />
                     </div>
                   </div>
                 </div>
@@ -100,11 +115,15 @@ function CardDaily({ tarotContent }) {
               </div>
             </div>
           </div>
-          <p className="text-center"><small>Powered by <a href="https://gemini.google.com/">Gemini</a></small></p>
+          <p className="text-center">
+            <small>
+              Powered by <a href="https://gemini.google.com/">Gemini</a>
+            </small>
+          </p>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default CardDaily;
