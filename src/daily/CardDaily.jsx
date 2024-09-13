@@ -70,13 +70,13 @@ function CardDaily({ tarotContent }) {
 
   // Generative AI Call fetch
   const aiRun2 = async () => {
-    const prompt = `Tarot reading with ${search} for ${date}. Include the name of the card, an interpretation, and the  ${position} position meaning only. Also include a contextual reading for ${date} and ${position} position.`;
+    const prompt = `Tarot reading with ${search} for ${date}. Include the name of the card, an reading of the  ${position} position meaning only as a bulleted list but do not include the word only in the title. Also include a contextual reading for ${date} and ${position} position only but do not include the word only in the title as a paragraph.`;
     const result = await model.generateContent(prompt);
     const response = result.response;
     const text = response.text();
     setResponse(text);
-    console.log(prompt);
   }; // end testing section
+
   return (
     <div className="container-xxl">
       <h1 className="text-center">Daily Card for {date}</h1>
