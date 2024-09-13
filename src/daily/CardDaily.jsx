@@ -75,7 +75,6 @@ function CardDaily({ tarotContent }) {
     const response = result.response;
     const text = response.text();
     setResponse(text);
-    console.log(text);
   }; // end testing section
   return (
     <div className="container-xxl">

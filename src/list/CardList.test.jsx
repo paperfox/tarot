@@ -3,9 +3,9 @@ import { test, expect } from 'vitest';
 import userEvent from '@testing-library/user-event';
 import '@testing-library/jest-dom';
 import CardList from './CardList';
-import TarotArray from '../static/Tarot-content';
+import DeckArray from '../static/Deck-content';
 
-const tarotContent = TarotArray();
+const tarotContent = DeckArray();
 
 test('view only completed cards and descriptions', async () => {
   render(<CardList tarotContent={tarotContent} />);
