@@ -16,6 +16,7 @@ function CardDaily({ tarotContent }) {
   const [cardAriaLabel, setCardAriaLabel] = useState('Reveal card');
   const [cardNumber, setCardNumber] = useState('');
   const [disabled, setDisabled] = useState(false);
+  const [binary, setBinary] = useState('');
 
   const genAI = new GoogleGenerativeAI(apiKey.MY_KEY);
   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
@@ -29,31 +30,30 @@ function CardDaily({ tarotContent }) {
   }, [valUrl]);
 
   var loading = disabled === true ? 'skeleton-loading' : '';
-  // need to fix upright/reversed bug
-  // let randomBinary = Math.floor(Math.random() * 2 + 1);
-  // var randomValue = randomBinary === 1 ? 'upright' : 'reversed';
-  // var randomValue = Math.random() < 0.5 ? 'upright' : 'reversed';
-  // var randomValueNumber = randomValue === 'upright' ? 1 : 2;
   let date = new Date().toLocaleDateString();
 
   useEffect(() => {
     let min = 1;
     let max = deck.length - 2;
     let randomInt = Math.floor(Math.random() * (max - min));
+    let randomBinary = Math.floor(Math.random() * 2 + 1);
 
     // creates drawn card in either upright or reversed position
     setCreateCard([
       ...createCard,
       {
         id: randomInt,
+        reverseCard: randomBinary,
         tarotText: deck[randomInt],
       },
     ]);
 
     setSearch(deck[randomInt].title);
     setCardNumber(deck[randomInt].cardValue);
-    // console.log(search, cardNumber, randomValue, cardAriaLabel);
+    setBinary(randomBinary);
   }, []);
+
+  const position = binary === 1 ? 'upright' : 'reversed';
 
   const handleClick = () => {
     // THERE'S A BETTER WAY TO DO THIS, but it's sunday so I'll come back to it later
@@ -70,11 +70,12 @@ function CardDaily({ tarotContent }) {
 
   // Generative AI Call fetch
   const aiRun2 = async () => {
-    const prompt = `Tarot reading with ${search} for ${date}. Include the name of the card, an interpretation, and the meaning for both the upright and reversed positions. Also include a contextual reading for ${date}.`;
+    const prompt = `Tarot reading with ${search} for ${date}. Include the name of the card, an interpretation, and the  ${position} position meaning only. Also include a contextual reading for ${date} and ${position} position.`;
     const result = await model.generateContent(prompt);
     const response = result.response;
     const text = response.text();
     setResponse(text);
+    console.log(prompt);
   }; // end testing section
   return (
     <div className="container-xxl">
@@ -100,7 +101,7 @@ function CardDaily({ tarotContent }) {
                     <div className="flip-card-back">
                       <img
                         src={'/tarot/images/cards/' + cardNumber + '.avif'}
-                        className={'card-img-top tarot-' + cardNumber}
+                        className={`card-img-top tarot-${cardNumber}_${binary}`}
                         aria-label={search}
                       />
                     </div>
