@@ -9,12 +9,11 @@ import DeckArray from './static/Deck-content';
 function App() {
   const tarotContent = DeckArray();
 
-  // Removeing descriptions from the deck
-  // Pre-sorted them in descending order to avoid shifting issues
+  // Removing descriptions from the deck, pre-sorted in descending order to avoid shifting issues
   const removeDesc = [68, 53, 38, 23, 0];
 
-  removeDesc.forEach((index) => {
-    tarotContent.splice(index, 1);
+  removeDesc.forEach((description) => {
+    tarotContent.splice(description, 1);
   });
 
   return (

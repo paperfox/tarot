@@ -2,8 +2,10 @@ import { useState, Fragment } from 'react';
 import CardDesc from './CardDesc';
 import SectionDesc from './SectionDesc';
 import { Button, ButtonGroup, ButtonToolbar } from 'react-bootstrap';
+import DeckArray from '../static/Deck-content';
 
 function CardList({ tarotContent }) {
+  const tarotFull = DeckArray();
   const [filteredCards, setFilteredCards] = useState(tarotContent);
 
   const handleClickFilter = (status) => {
@@ -66,20 +68,17 @@ function CardList({ tarotContent }) {
           </ul>
         </div>
         <div className="col-lg-10 col-md-9">
-          {tarotContent.map(
-            (sectionHeading, index) => (
-              <Fragment key={index}>
-                <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />
-                {filteredCards
-                  .filter((desc) => desc.title.includes(sectionHeading.title || null))
-                  .map((exampleCard) => (
-                    <CardDesc dataContent={exampleCard} key={exampleCard.cardValue} />
-                  ))}
-              </Fragment>
-            )
-
-            // console.log(sectionHeading.title)
-          )}
+          {tarotFull.map((sectionHeading, index) => (
+            <Fragment key={index}>
+              {sectionHeading.id && <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />}
+              {/* {console.log(sectionHeading)} */}
+              {filteredCards
+                .filter((desc) => desc.title.includes(sectionHeading.title || null))
+                .map((exampleCard) => (
+                  <CardDesc dataContent={exampleCard} key={exampleCard.cardValue} />
+                ))}
+            </Fragment>
+          ))}
         </div>
       </div>
     </div>
