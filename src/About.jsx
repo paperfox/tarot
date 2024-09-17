@@ -6,7 +6,7 @@ function About() {
         <div className="col-xl-5 col-lg-6 col-md-7 col-sm-10">
           <div className="mb-5">
             <p>
-              I'm having fun building a tarot app and eventually, slowly drawing the cards. As a developer
+              I'm having fun building a tarot app and eventually, slowly drawing the cards. As a developer and designer
               professionally and an artist by passion it gives me a chance to combine the things I love!
             </p>
             <p>
@@ -30,7 +30,11 @@ function About() {
               <a href="https://www.shadowscapes.com/Tarot/cardsmain.php?suit=0" target="_blank" rel="noreferrer">
                 Shadowscapes Tarot Deck
               </a>{' '}
-              - though there's a new Shadowscapes deck coming out, so I'm excited for that!
+              - though there's a new deck,{' '}
+              <a href="https://verdancetarot.com/" target="_blank" rel="noreferrer">
+                Verdance Tarot
+              </a>
+              , by Stephanie Law coming out, so I'm excited for that!
             </p>
           </div>
           <div className="mb-5">
