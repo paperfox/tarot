@@ -40,7 +40,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
             <div className={`${modalDeck ? 'col-md-4 col-5' : 'col-auto mb-2'}`}>
               <img
                 src={'/tarot/images/cards/' + dataImg + '.avif'}
-                className={`${modalDeck ? 'w-100 rounded mb-4' : 'w-100 rounded'}`}
+                className={`${modalDeck ? 'w-100 rounded mb-4' : 'w-100 rounded mb-sm-2'}`}
                 alt={'Image of ' + dataContent.title + ' card'}
               />
             </div>
