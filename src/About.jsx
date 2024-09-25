@@ -11,7 +11,7 @@ function About() {
             </p>
             <p>
               Creative writing is not my jam but I'm doing my best, and constantly revising the card descriptions here.
-              If you're looking for more indepth card descriptions, I reccommend checking out{' '}
+              If you're looking for more in-depth card descriptions, I recommend checking out{' '}
               <a href="https://labyrinthos.co/blogs/tarot-card-meanings-list" target="_blank" rel="noreferrer">
                 Labyrinthos
               </a>

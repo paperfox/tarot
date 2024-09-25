@@ -20,7 +20,7 @@ function App() {
     <>
       <main className="paperfox-content">
         <a href="https://paperfox.github.io" className="paperfox-logo" tabIndex={0}>
-          <img src="/images/paperfoxlogo-bold.svg" alt="Back to homepage" />
+          <img src="/images/paperfoxlogo-bold.svg" alt="Back to Paperfox homepage" />
         </a>
         <Tabs defaultActiveKey="TarotApp" id="paperfox-" className="mb-3 w-100">
           <Tab eventKey="TarotApp" title="Deck">

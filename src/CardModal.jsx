@@ -36,7 +36,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
           <Modal.Title as="h2">{dataContent.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="row justify-content-center">
+          <div className="row justify-content-center px-2">
             <div className={`${modalDeck ? 'col-md-4 col-5' : 'col-auto mb-2'}`}>
               <img
                 src={'/tarot/images/cards/' + dataImg + '.avif'}
