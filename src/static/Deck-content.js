@@ -280,7 +280,7 @@ function DeckArray() {
     },
     {
       cardValue: 23,
-      artStatus: 'None',
+      artStatus: 'Complete',
       title: 'Two of Wands',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -493,7 +493,7 @@ function DeckArray() {
     },
     {
       cardValue: 41,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'Six of Cups',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

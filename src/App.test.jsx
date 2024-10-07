@@ -52,7 +52,7 @@ describe('Count how many cards are left to draw', () => {
       name: /of wands/i,
     });
 
-    expect(cardTitlesCups).toHaveLength(5);
+    expect(cardTitlesCups).toHaveLength(4);
   });
 
   it('cups not started', async () => {
@@ -64,7 +64,7 @@ describe('Count how many cards are left to draw', () => {
       name: /of cups/i,
     });
 
-    expect(cardTitlesCups).toHaveLength(5);
+    expect(cardTitlesCups).toHaveLength(4);
   });
 
   it('swords not started', async () => {
