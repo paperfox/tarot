@@ -78,7 +78,7 @@ function DeckArray() {
     },
     {
       cardValue: 6,
-      artStatus: 'Draft',
+      artStatus: 'Complete',
       title: 'The Lovers',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -315,7 +315,7 @@ function DeckArray() {
     },
     {
       cardValue: 26,
-      artStatus: 'None',
+      artStatus: 'Complete',
       title: 'Five of Wands',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -361,7 +361,7 @@ function DeckArray() {
     },
     {
       cardValue: 30,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'Nine of Wands',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

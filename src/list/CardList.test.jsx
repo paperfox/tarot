@@ -13,7 +13,7 @@ test('view only completed cards and descriptions', async () => {
   await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Completed' })));
   const cardTitles = screen.getAllByRole('heading', { level: 3 });
 
-  expect(cardTitles).toHaveLength(25);
+  expect(cardTitles).toHaveLength(27);
 });
 
 test('view all started cards and descriptions', async () => {
