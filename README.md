@@ -49,5 +49,3 @@ $ npm run deploy
 
 [Live site](https://paperfox.github.io/tarot/ 'Paperfox Tarot App')
 
-
-[Live Site](https://paperfox-movie-search.netlify.app/)
