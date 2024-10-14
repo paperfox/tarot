@@ -194,7 +194,7 @@ function DeckArray() {
     },
     {
       cardValue: 16,
-      artStatus: 'None',
+      artStatus: 'Complete',
       title: 'The Tower',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -361,7 +361,7 @@ function DeckArray() {
     },
     {
       cardValue: 30,
-      artStatus: 'Draft',
+      artStatus: 'Complete',
       title: 'Nine of Wands',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
