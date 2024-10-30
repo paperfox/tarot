@@ -636,7 +636,7 @@ function DeckArray() {
     },
     {
       cardValue: 53,
-      artStatus: 'None',
+      artStatus: 'Complete',
       title: 'Four of Swords',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

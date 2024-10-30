@@ -35,8 +35,8 @@ function CardDaily({ tarotContent }) {
   useEffect(() => {
     let min = 1;
     let max = deck.length - 2;
-    let randomInt = Math.floor(Math.random() * (max - min));
-    let randomBinary = Math.floor(Math.random() * 2 + 1);
+    let randomInt = Math.trunc(Math.random() * (max - min));
+    let randomBinary = Math.trunc(Math.random() * 2 + 1);
 
     // creates drawn card in either upright or reversed position
     setCreateCard([
@@ -63,13 +63,13 @@ function CardDaily({ tarotContent }) {
     });
 
     setCardAriaLabel(search);
-    aiRun2();
+    aiRun();
     setCardFace('show');
     setDisabled(true);
   };
 
   // Generative AI Call fetch
-  const aiRun2 = async () => {
+  const aiRun = async () => {
     const prompt = `Tarot reading with ${search} for ${date}. Include the name of the card, an reading of the  ${position} position meaning only as a bulleted list but do not include the word only in the title. Also include a contextual reading for ${date} and ${position} position only but do not include the word only in the title as a paragraph.`;
     const result = await model.generateContent(prompt);
     const response = result.response;
