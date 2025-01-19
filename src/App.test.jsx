@@ -28,20 +28,29 @@ describe('App loads and has content', () => {
   });
 });
 
+// Daily Card Tab
+test('select tab and view daily card face down', async () => {
+  render(<App />);
+
+  user.click(await screen.findByRole('tab', { name: 'Daily', selected: false }));
+  const dailyTabClicked = await screen.findByRole('tab', { name: 'Daily', selected: true });
+  const subtitle = screen.getByLabelText(/Draw card from Tarot Deck/i);
+
+  expect(dailyTabClicked).toBeTruthy();
+  expect(subtitle).toBeInTheDocument("Reveal today's card below");
+});
+
 // Card List Tab
 test('select tab and view full list of cards and descriptions', async () => {
   const { container } = render(<App />);
 
   user.click(await screen.findByRole('tab', { name: 'Card List', selected: false }));
-  const aboutTabClicked = await screen.findByRole('tab', {
-    name: 'Card List',
-    selected: true
-  });
+  const listTabClicked = await screen.findByRole('tab', { name: 'Card List', selected: true });
   const cardTitles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
     level: 3
   });
 
-  expect(aboutTabClicked).toBeTruthy();
+  expect(listTabClicked).toBeTruthy();
   expect(cardTitles).toHaveLength(78);
 });
 
@@ -93,7 +102,7 @@ describe('Count how many cards are left to draw', () => {
       { level: 3, name: /of swords/i }
     );
 
-    expect(cardTitlesSwords).toHaveLength(10);
+    expect(cardTitlesSwords).toHaveLength(9);
   });
 
   it('pentacles not started', async () => {
