@@ -19,7 +19,7 @@ function CardList({ tarotContent }) {
   const filterButtons = [
     { label: 'Completed', status: 'Complete' },
     { label: 'Drafts', status: 'Draft' },
-    { label: 'Placeholders', status: 'None' },
+    { label: 'Placeholders', status: 'None' }
   ];
 
   return (
@@ -42,9 +42,6 @@ function CardList({ tarotContent }) {
               </Button>
             </ButtonGroup>
           </ButtonToolbar>
-          <p className="text-center">
-            <small>{filteredCards.length} cards</small>
-          </p>
         </div>
       </div>
 

@@ -22,7 +22,7 @@ test('view all started cards and descriptions', async () => {
   await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Drafts' })));
   const cardTitles = screen.getAllByRole('heading', { level: 3 });
 
-  expect(cardTitles).toHaveLength(23);
+  expect(cardTitles).toHaveLength(24);
 });
 
 test('clear card filters', async () => {

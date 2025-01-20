@@ -102,7 +102,7 @@ describe('Count how many cards are left to draw', () => {
       { level: 3, name: /of swords/i }
     );
 
-    expect(cardTitlesSwords).toHaveLength(9);
+    expect(cardTitlesSwords).toHaveLength(8);
   });
 
   it('pentacles not started', async () => {
