@@ -100,7 +100,7 @@ function DeckArray() {
     },
     {
       cardValue: 8,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'Strength',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -304,7 +304,7 @@ function DeckArray() {
     },
     {
       cardValue: 25,
-      artStatus: 'None',
+      artStatus: 'Draft',
       title: 'Four of Wands',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',

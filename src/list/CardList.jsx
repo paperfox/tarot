@@ -42,6 +42,9 @@ function CardList({ tarotContent }) {
               </Button>
             </ButtonGroup>
           </ButtonToolbar>
+          <p className="text-center">
+            <small>{filteredCards.length} cards</small>
+          </p>
         </div>
       </div>
 
