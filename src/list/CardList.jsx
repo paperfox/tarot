@@ -19,7 +19,7 @@ function CardList({ tarotContent }) {
   const filterButtons = [
     { label: 'Completed', status: 'Complete' },
     { label: 'Drafts', status: 'Draft' },
-    { label: 'Placeholders', status: 'None' },
+    { label: 'Placeholders', status: 'None' }
   ];
 
   return (

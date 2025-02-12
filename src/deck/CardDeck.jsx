@@ -28,8 +28,8 @@ function CardDeck({ tarotContent }) {
     let min = 1;
     let max = deck.length - 2;
 
-    let randomInt = Math.floor(Math.random() * (max - min));
-    let randomBinary = Math.floor(Math.random() * 2 + 1);
+    let randomInt = Math.trunc(Math.random() * (max - min));
+    let randomBinary = Math.trunc(Math.random() * 2 + 1);
 
     if (deck.length > 75) {
       // creates drawn card in either upright or reversed position

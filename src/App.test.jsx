@@ -4,6 +4,10 @@ import user from '@testing-library/user-event';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
+const { axe, toHaveNoViolations } = require('jest-axe');
+
+expect.extend(toHaveNoViolations);
+
 describe('App loads and has content', () => {
   it('renders without crashing', () => {
     const { container } = render(<App />);
@@ -15,6 +19,25 @@ describe('App loads and has content', () => {
     const deck = screen.getByLabelText(/Draw card from Tarot Deck/i);
     expect(deck).toBeInTheDocument();
   });
+
+  it('does not have programmatic accessibility violations', async () => {
+    const { container } = render(<App />);
+    const results = await axe(container);
+
+    expect(results).toHaveNoViolations();
+  });
+});
+
+// Daily Card Tab
+test('select tab and view daily card face down', async () => {
+  render(<App />);
+
+  user.click(await screen.findByRole('tab', { name: 'Daily', selected: false }));
+  const dailyTabClicked = await screen.findByRole('tab', { name: 'Daily', selected: true });
+  const subtitle = screen.getByLabelText(/Draw card from Tarot Deck/i);
+
+  expect(dailyTabClicked).toBeTruthy();
+  expect(subtitle).toBeInTheDocument("Reveal today's card below");
 });
 
 // Card List Tab
@@ -22,12 +45,12 @@ test('select tab and view full list of cards and descriptions', async () => {
   const { container } = render(<App />);
 
   user.click(await screen.findByRole('tab', { name: 'Card List', selected: false }));
-  const aboutTabClicked = await screen.findByRole('tab', { name: 'Card List', selected: true });
+  const listTabClicked = await screen.findByRole('tab', { name: 'Card List', selected: true });
   const cardTitles = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
-    level: 3,
+    level: 3
   });
 
-  expect(aboutTabClicked).toBeTruthy();
+  expect(listTabClicked).toBeTruthy();
   expect(cardTitles).toHaveLength(78);
 });
 
@@ -36,7 +59,10 @@ test('select and view about page', async () => {
   render(<App />);
 
   user.click(await screen.findByRole('tab', { name: 'About', selected: false }));
-  const aboutTabClicked = await screen.findByRole('tab', { name: 'About', selected: true });
+  const aboutTabClicked = await screen.findByRole('tab', {
+    name: 'About',
+    selected: true
+  });
 
   expect(aboutTabClicked).toBeTruthy();
 });
@@ -49,10 +75,10 @@ describe('Count how many cards are left to draw', () => {
     await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Placeholders' })));
     const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
       level: 3,
-      name: /of wands/i,
+      name: /of wands/i
     });
 
-    expect(cardTitlesCups).toHaveLength(4);
+    expect(cardTitlesCups).toHaveLength(1);
   });
 
   it('cups not started', async () => {
@@ -61,7 +87,7 @@ describe('Count how many cards are left to draw', () => {
     await waitFor(() => userEvent.click(screen.getByRole('button', { name: 'Placeholders' })));
     const cardTitlesCups = within(container.querySelector('#paperfox--tabpane-TarotCardList')).getAllByRole('heading', {
       level: 3,
-      name: /of cups/i,
+      name: /of cups/i
     });
 
     expect(cardTitlesCups).toHaveLength(4);
@@ -76,7 +102,7 @@ describe('Count how many cards are left to draw', () => {
       { level: 3, name: /of swords/i }
     );
 
-    expect(cardTitlesSwords).toHaveLength(10);
+    expect(cardTitlesSwords).toHaveLength(8);
   });
 
   it('pentacles not started', async () => {

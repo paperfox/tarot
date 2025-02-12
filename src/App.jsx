@@ -7,14 +7,13 @@ import Footer from './Footer';
 import DeckArray from './static/Deck-content';
 
 function App() {
-  const tarotContent = DeckArray();
+  const justCards = [];
 
-  // Removing descriptions from the deck, pre-sorted in descending order to avoid shifting issues
-  const removeDesc = [68, 53, 38, 23, 0];
-
-  removeDesc.forEach((description) => {
-    tarotContent.splice(description, 1);
-  });
+  // Removing descriptions from the deck for cases where I need cards only
+  for (let i = 0; i < DeckArray().length; i++) {
+    if (DeckArray()[i].hasOwnProperty('description')) continue;
+    justCards.push(DeckArray()[i]);
+  }
 
   return (
     <>
@@ -24,13 +23,13 @@ function App() {
         </a>
         <Tabs defaultActiveKey="TarotApp" id="paperfox-" className="mb-3 w-100">
           <Tab eventKey="TarotApp" title="Deck">
-            <CardDeck tarotContent={tarotContent} />
+            <CardDeck tarotContent={justCards} />
           </Tab>
           <Tab eventKey="TarotDailyCard" title="Daily">
-            <CardDaily tarotContent={tarotContent} />
+            <CardDaily tarotContent={justCards} />
           </Tab>
           <Tab eventKey="TarotCardList" title="Card List">
-            <CardList tarotContent={tarotContent} />
+            <CardList tarotContent={DeckArray()} />
           </Tab>
           <Tab eventKey="TarotAboutPage" title="About">
             <About />
