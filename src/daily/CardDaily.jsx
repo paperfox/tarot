@@ -104,7 +104,7 @@ function CardDaily({ tarotContent }) {
                     </div>
                     <div className="flip-card-back">
                       <img
-                        src={'/images/cards/' + cardNumber + '.avif'}
+                        src={cardNumber ? '/images/cards/' + cardNumber + '.avif' : ''}
                         className={`card-img-top tarot-${cardNumber}_${binary}`}
                         aria-label={search}
                       />
