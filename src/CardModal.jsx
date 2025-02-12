@@ -16,15 +16,19 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
         className={`${modalDeck ? 'float-end btn-tarotcard' : 'float-end'}`}
         onClick={handleShowModal}
         aria-label={`${
-          modalDeck ? `More information about ${dataContent.title}` : `View larger image of ${dataContent.title}`
+          modalDeck
+            ? `More information about ${dataContent.title}`
+            : `View larger image of ${dataContent.title}`
         }`}
         data-testid="info-modal-trigger"
       >
-        {modalDeck === false || <img src="/images/info-icon-by-i-con.svg" className="info-icon" alt="info icon" />}
+        {modalDeck === false || (
+          <img src="/images/info-icon-by-i-con.svg" className="info-icon" alt="info icon" />
+        )}
 
         {modalDeck === true || (
           <img
-            src={'/tarot/images/cards/' + dataImg + '.avif'}
+            src={'/images/cards/' + dataImg + '.avif'}
             className="w-100 rounded"
             alt={'Image of ' + dataContent.title + ' card'}
           />
@@ -39,7 +43,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
           <div className="row justify-content-center px-2">
             <div className={`${modalDeck ? 'col-md-4 col-5' : 'col-auto mb-2'}`}>
               <img
-                src={'/tarot/images/cards/' + dataImg + '.avif'}
+                src={'/images/cards/' + dataImg + '.avif'}
                 className={`${modalDeck ? 'w-100 rounded mb-4' : 'w-100 rounded mb-sm-2'}`}
                 alt={'Image of ' + dataContent.title + ' card'}
               />

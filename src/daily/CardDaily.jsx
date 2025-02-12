@@ -96,11 +96,15 @@ function CardDaily({ tarotContent }) {
                 <div className="flip-card">
                   <div className={'flip-card-inner ' + cardFace}>
                     <div className="flip-card-front">
-                      <img src="/tarot/images/cards/back.svg" className="card-img-top" alt="Back of Tarot Card" />
+                      <img
+                        src="/images/cards/back.svg"
+                        className="card-img-top"
+                        alt="Back of Tarot Card"
+                      />
                     </div>
                     <div className="flip-card-back">
                       <img
-                        src={'/tarot/images/cards/' + cardNumber + '.avif'}
+                        src={'/images/cards/' + cardNumber + '.avif'}
                         className={`card-img-top tarot-${cardNumber}_${binary}`}
                         aria-label={search}
                       />

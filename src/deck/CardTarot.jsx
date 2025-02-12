@@ -22,15 +22,24 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
         <div className="card-body">
           <h2 className="p">{layoutTitles}</h2>
           <div className="mb-3">
-            <Button variant="link" onClick={handleVisibility} aria-live="polite" aria-label={cardAriaLabel}>
+            <Button
+              variant="link"
+              onClick={handleVisibility}
+              aria-live="polite"
+              aria-label={cardAriaLabel}
+            >
               <div className="flip-card">
                 <div className={'flip-card-inner ' + cardFace}>
                   <div className="flip-card-front">
-                    <img src="/tarot/images/cards/back.svg" className="card-img-top" alt="Back of Tarot Card" />
+                    <img
+                      src="/images/cards/back.svg"
+                      className="card-img-top"
+                      alt="Back of Tarot Card"
+                    />
                   </div>
                   <div className="flip-card-back">
                     <img
-                      src={'/tarot/images/cards/' + dataImg + '.avif'}
+                      src={'/images/cards/' + dataImg + '.avif'}
                       className={'card-img-top tarot-' + dataImg + reverseCard}
                       alt=""
                     />
@@ -39,7 +48,12 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
               </div>
             </Button>
           </div>
-          <CardModal reverseCard={reverseCard} dataImg={dataImg} dataContent={dataContent} modalDeck={true} />
+          <CardModal
+            reverseCard={reverseCard}
+            dataImg={dataImg}
+            dataContent={dataContent}
+            modalDeck={true}
+          />
         </div>
       </div>
     </div>
