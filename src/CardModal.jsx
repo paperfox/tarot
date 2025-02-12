@@ -23,7 +23,11 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
         data-testid="info-modal-trigger"
       >
         {modalDeck === false || (
-          <img src="/images/info-icon-by-i-con.svg" className="info-icon" alt="info icon" />
+          <img
+            src="https://paperfox.github.io/images/info-icon-by-i-con.svg"
+            className="info-icon"
+            alt="info icon"
+          />
         )}
 
         {modalDeck === true || (

@@ -19,7 +19,7 @@ function CardList({ tarotContent }) {
   const filterButtons = [
     { label: 'Completed', status: 'Complete' },
     { label: 'Drafts', status: 'Draft' },
-    { label: 'Placeholders', status: 'None' }
+    { label: 'Placeholders', status: 'None' },
   ];
 
   return (
@@ -31,7 +31,11 @@ function CardList({ tarotContent }) {
           <ButtonToolbar aria-label="Toolbar with button groups">
             <ButtonGroup className="me-2">
               {filterButtons.map((button) => (
-                <Button variant="primary" onClick={() => handleClickFilter(button.status)} key={button.label}>
+                <Button
+                  variant="primary"
+                  onClick={() => handleClickFilter(button.status)}
+                  key={button.label}
+                >
                   {button.label}
                 </Button>
               ))}
@@ -42,9 +46,6 @@ function CardList({ tarotContent }) {
               </Button>
             </ButtonGroup>
           </ButtonToolbar>
-          <p className="text-center">
-            <small>{filteredCards.length} cards</small>
-          </p>
         </div>
       </div>
 
@@ -70,7 +71,9 @@ function CardList({ tarotContent }) {
         <div className="col-lg-10 col-md-9">
           {tarotFull.map((sectionHeading, index) => (
             <Fragment key={index}>
-              {sectionHeading.id && <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />}
+              {sectionHeading.id && (
+                <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />
+              )}
               {/* {console.log(sectionHeading)} */}
               {filteredCards
                 .filter((desc) => desc.title.includes(sectionHeading.title || null))
