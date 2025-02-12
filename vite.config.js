@@ -1,12 +1,12 @@
 // import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import {defineConfig} from 'vitest/config'
-import {svelte} from '@sveltejs/vite-plugin-svelte'
-import {svelteTesting} from '@testing-library/svelte/vite'
+import react from '@vitejs/plugin-react';
+import { defineConfig } from 'vitest/config';
+import { svelte } from '@sveltejs/vite-plugin-svelte';
+import { svelteTesting } from '@testing-library/svelte/vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "https://paperfox.github.io/tarot/",
+  base: '',
   plugins: [react(), svelte(), svelteTesting()],
   test: {
     globals: true,
@@ -19,5 +19,4 @@ export default defineConfig({
   // optimizeDeps: {
   //   disabled: false,
   // },
-})
-
+});
