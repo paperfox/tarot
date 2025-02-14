@@ -5,9 +5,8 @@ import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
 function CardDaily({ tarotContent }) {
-  var valUrl = 'https://paperfox-pfdtc.web.val.run';
+  const MY_KEY = import.meta.env.VITE_KEY;
 
-  const [apiKey, setApiKey] = useState([]);
   const [aiResponse, setResponse] = useState('');
   const [search, setSearch] = useState('');
   const [deck, setDeck] = useState([...tarotContent]);
@@ -18,16 +17,8 @@ function CardDaily({ tarotContent }) {
   const [disabled, setDisabled] = useState(false);
   const [binary, setBinary] = useState('');
 
-  const genAI = new GoogleGenerativeAI(apiKey.MY_KEY);
+  const genAI = new GoogleGenerativeAI(MY_KEY);
   const model = genAI.getGenerativeModel({ model: 'gemini-pro' });
-
-  useEffect(() => {
-    fetch(valUrl)
-      .then((res) => res.json())
-      .then((data) => {
-        setApiKey(data);
-      });
-  }, [valUrl]);
 
   var loading = disabled === true ? 'skeleton-loading' : '';
   let date = new Date().toLocaleDateString();
