@@ -22,7 +22,18 @@ function App() {
           <img src="/images/paperfoxlogo-bold.svg" alt="Back to Paperfox homepage" />
         </a>
         <Tabs defaultActiveKey="TarotApp" id="paperfox-" className="mb-3 w-100">
-          <Tab eventKey="TarotApp" title="Deck">
+          <Tab eventKey="TarotApp" title="Home">
+            <div className="container-xxl text-center">
+              <h1>Update</h1>
+              <p>
+                Tarot app has moved. Please visit it at its new site here:{' '}
+                <a href="https://paperfox-tarot.netlify.app/" target="_blank">
+                  New Tarot Home
+                </a>
+              </p>
+            </div>
+          </Tab>
+          {/* <Tab eventKey="TarotApp" title="Deck">
             <CardDeck tarotContent={justCards} />
           </Tab>
           <Tab eventKey="TarotDailyCard" title="Daily">
@@ -30,7 +41,7 @@ function App() {
           </Tab>
           <Tab eventKey="TarotCardList" title="Card List">
             <CardList tarotContent={DeckArray()} />
-          </Tab>
+          </Tab> */}
           <Tab eventKey="TarotAboutPage" title="About">
             <About />
           </Tab>
