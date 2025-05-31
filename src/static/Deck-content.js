@@ -438,7 +438,7 @@ function DeckArray() {
     },
     {
       cardValue: 36,
-      artStatus: 'Draft',
+      artStatus: 'Complete',
       title: 'Ace of Cups',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
@@ -563,7 +563,7 @@ function DeckArray() {
     },
     {
       cardValue: 47,
-      artStatus: 'Draft',
+      artStatus: 'Complete',
       title: 'Knight of Cups',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
