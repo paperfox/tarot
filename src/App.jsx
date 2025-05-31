@@ -19,15 +19,18 @@ function App() {
     <>
       <main className="paperfox-content">
         <a href="https://paperfox.github.io" className="paperfox-logo" tabIndex={0}>
-          <img src="https://paperfox.github.io/images/paperfoxlogo-bold.svg" alt="Back to Paperfox homepage" />
+          <img
+            src="https://paperfox.github.io/images/paperfoxlogo-bold.svg"
+            alt="Back to Paperfox homepage"
+          />
         </a>
         <Tabs defaultActiveKey="TarotApp" id="paperfox-" className="mb-3 w-100">
           <Tab eventKey="TarotApp" title="Deck">
             <CardDeck tarotContent={justCards} />
           </Tab>
-          {/* <Tab eventKey="TarotDailyCard" title="Daily">
+          <Tab eventKey="TarotDailyCard" title="Daily">
             <CardDaily tarotContent={justCards} />
-          </Tab> */}
+          </Tab>
           <Tab eventKey="TarotCardList" title="Card List">
             <CardList tarotContent={DeckArray()} />
           </Tab>
