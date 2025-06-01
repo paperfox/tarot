@@ -8,15 +8,22 @@
 .btn-group > {
   .btn-group:not(:last-child) > .btn,
   .btn:not(:last-child):not(.dropdown-toggle) {
-    &, &:hover, &:focus, &:active { border-right: $dashed-border; }
+    &,
+    &:hover,
+    &:focus,
+    &:active {
+      border-right: $dashed-border;
+    }
   }
 
   .btn-group:not(:first-child) > .btn,
-  :not(.btn-check) + .btn { border-left: $dashed-border; }
+  :not(.btn-check) + .btn {
+    border-left: $dashed-border;
+  }
 }
 
 .nav-tabs {
-  background-color: rgba(var(--nav-bg-alpha), .9);
+  background-color: rgba(var(--nav-bg-alpha), 0.9);
   font-size: 1.6rem;
   border-bottom: none;
   position: fixed;
@@ -25,26 +32,34 @@
   .nav-link {
     font-weight: 500;
     color: var(--accent);
-    border-bottom: .2rem solid transparent;
-    padding: .8rem 1.6rem;
+    border-bottom: 0.2rem solid transparent;
+    padding: 0.8rem 1.6rem;
 
-    &:focus-visible { outline: $dotted-border; }
-    &.active        { color: var(--white); }
+    &:focus-visible {
+      outline: $dotted-border;
+    }
+    &.active {
+      color: var(--white);
+    }
 
     &.active,
     &:focus,
     &:hover,
-    &:focus-visible  {
+    &:focus-visible {
       background-color: rgb(var(--black));
-      border: .1rem solid transparent;
-      border-bottom: .2rem solid var(--accent);
+      border: 0.1rem solid transparent;
+      border-bottom: 0.2rem solid var(--accent);
     }
   }
 }
 
-.btn-tarotcard { opacity: 1; }
+.btn-tarotcard {
+  opacity: 1;
+}
 
-.nav-tabs li:first-of-type { margin-left: 6.4rem; }
+.nav-tabs li:first-of-type {
+  margin-left: 6.4rem;
+}
 
 /* Images */
 .paperfox-logo {
@@ -52,11 +67,13 @@
   top: 0;
   left: 0;
   z-index: $zindex-offcanvas-backdrop;
-  margin: .2rem;
-  padding: .6rem 1rem .3rem;
-  border-bottom: .2rem solid transparent;
+  margin: 0.2rem;
+  padding: 0.6rem 1rem 0.3rem;
+  border-bottom: 0.2rem solid transparent;
 
-  &:hover { border-bottom: .2rem solid var(--accent); }
+  &:hover {
+    border-bottom: 0.2rem solid var(--accent);
+  }
 
   img {
     height: 3rem;
@@ -64,14 +81,25 @@
   }
 }
 
-.list-unstyled img[src$=".svg"] {
-  height: 3.2rem; opacity: .8;
-
-  & :hover { opacity: 1; }
+.icon-white {
+  filter: brightness(0) invert(1);
 }
 
-img[class*="_2"] { rotate: 180deg; }
-.info-icon       { width: 2.4rem; } /* Info icon created by i cons from the noun project - tinyurl.com/47b8m4an */
+.list-unstyled img[src$='.svg'] {
+  height: 3.2rem;
+  opacity: 0.8;
+
+  & :hover {
+    opacity: 1;
+  }
+}
+
+img[class*='_2'] {
+  rotate: 180deg;
+}
+.info-icon {
+  width: 2.4rem;
+} /* Info icon created by i cons from the noun project - tinyurl.com/47b8m4an */
 
 /* Responsive */
 @include media-breakpoint-up(md) {
@@ -87,7 +115,7 @@ img[class*="_2"] { rotate: 180deg; }
     top: 4.2rem;
     display: flex;
     width: 100%;
-    background-color: rgba(var(--nav-bg-alpha), .8);
+    background-color: rgba(var(--nav-bg-alpha), 0.8);
     z-index: $zindex-sticky;
     margin: 0 -1.6rem;
 
@@ -95,19 +123,29 @@ img[class*="_2"] { rotate: 180deg; }
       margin: auto;
 
       a {
-        padding: .8rem .4rem;
+        padding: 0.8rem 0.4rem;
         display: inline-block;
 
-        span { display: none; }
+        span {
+          display: none;
+        }
       }
     }
   }
 
-  [id*="TarotCardList"] h1 { padding-top: 10rem; }
-  [id*="sectionTitle"]     { scroll-margin-top: 9rem; }
+  [id*='TarotCardList'] h1 {
+    padding-top: 10rem;
+  }
+  [id*='sectionTitle'] {
+    scroll-margin-top: 9rem;
+  }
 }
 
 @include media-breakpoint-down(sm) {
-  .nav-tabs .nav-link { padding: .8rem .8rem; }
-  .side-nav li a { font-size: 1.5rem; }
+  .nav-tabs .nav-link {
+    padding: 0.8rem 0.8rem;
+  }
+  .side-nav li a {
+    font-size: 1.5rem;
+  }
 }

@@ -83,6 +83,7 @@ function About() {
                 <img
                   src="https://paperfox.github.io/images/paperfoxlogo-bold.svg"
                   alt="Paperfox Website"
+                  class="icon-white"
                 />
               </a>
             </li>
