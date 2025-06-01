@@ -60,15 +60,11 @@ function About() {
             </p>
             <p>
               My images are not for reuse or reposting, though if you want one for any reason,
-              please reach out to me and we can probably work something out -{' '}
-              <a
-                href="https://www.instagram.com/paperfoxmakesart/"
-                target="_blank"
-                rel="noreferrer"
-              >
-                @paperfoxmakesart
+              please reach out to me via the form on the contact page of my main site -{' '}
+              <a href="https://paperfox.art" target="_blank" rel="noreferrer">
+                paperfox.art
               </a>{' '}
-              on instagram.
+              and we can probably work something out.
             </p>
             <p>
               Many of the characters in my Tarot images belong to others, please check out their
