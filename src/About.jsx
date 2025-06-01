@@ -79,6 +79,14 @@ function About() {
           <p>Looking to connect? You can find me in any of these places.</p>
           <ul className="list-unstyled d-flex justify-content-center">
             <li className="m-3">
+              <a href="https://paperfox.art" target="_blank" rel="noreferrer">
+                <img
+                  src="https://paperfox.github.io/images/paperfoxlogo-bold.svg"
+                  alt="Paperfox Website"
+                />
+              </a>
+            </li>
+            <li className="m-3">
               <a
                 href="https://www.instagram.com/paperfoxmakesart/"
                 target="_blank"
