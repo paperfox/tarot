@@ -682,7 +682,7 @@ function DeckArray() {
     },
     {
       cardValue: 57,
-      artStatus: 'None',
+      artStatus: 'Complete',
       title: 'Eight of Swords',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
