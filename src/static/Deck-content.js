@@ -693,7 +693,7 @@ function DeckArray() {
     },
     {
       cardValue: 58,
-      artStatus: 'None',
+      artStatus: 'Complete',
       title: 'Nine of Swords',
       uprightTitle: 'Upright',
       reverseTitle: 'Reversed',
