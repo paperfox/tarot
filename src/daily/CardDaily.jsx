@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { GoogleGenerativeAI } from '@google/generative-ai';
-import Button from 'react-bootstrap/Button';
 import Markdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
 
@@ -76,8 +75,7 @@ function CardDaily({ tarotContent }) {
         <div className="col-md-12 col-lg-10">
           <div className="row justify-content-center mb-4">
             <div className="col-sm-auto mb-4">
-              <Button
-                variant="link"
+              <button
                 className="btn-daily"
                 onClick={() => handleClick()}
                 aria-live="polite"
@@ -102,7 +100,7 @@ function CardDaily({ tarotContent }) {
                     </div>
                   </div>
                 </div>
-              </Button>
+              </button>
             </div>
             <div className="col-auto mb-4 daily-description demand-2">
               <div className={loading}>

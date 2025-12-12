@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import CardTarot from './CardTarot';
 
 function CardDeck({ tarotContent }) {
@@ -75,9 +74,8 @@ function CardDeck({ tarotContent }) {
     <div className="container-xxl text-center">
       <h1>Three Card Draw</h1>
       <div className="mb-4">
-        <Button
+        <button
           className="tarot-deck"
-          variant="link"
           onClick={handleClick}
           aria-live="polite"
           aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'}
@@ -99,7 +97,7 @@ function CardDeck({ tarotContent }) {
               </div>
             </div>
           </div>
-        </Button>
+        </button>
       </div>
       <div className="row justify-content-center mb-4">
         {createCard.map((exampleCard, index) => {
@@ -115,9 +113,9 @@ function CardDeck({ tarotContent }) {
         })}
       </div>
 
-      <Button variant="primary" className="mb-4" onClick={handleClickReset}>
+      <button className="btn-primary mb-4" onClick={handleClickReset}>
         Reset
-      </Button>
+      </button>
     </div>
   );
 }

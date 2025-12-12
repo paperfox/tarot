@@ -4,16 +4,19 @@
   height: 2rem;
   opacity: 1;
 
-  &:hover { filter: grayscale(100%) brightness(400%); opacity: .8; }
+  &:hover {
+    filter: grayscale(100%) brightness(400%);
+    opacity: 0.8;
+  }
 
   &:focus,
   &:focus-visible {
-    outline-offset: .1rem;
+    outline-offset: 0.1rem;
     outline: $dotted-border;
   }
 }
 
-.modal-header       {
+.modal-header {
   position: relative;
 
   .btn-close {
@@ -23,5 +26,10 @@
   }
 }
 
-.modal-header   { justify-content: space-around; }
-.modal-content  { background-color: var(--main-bg); }
+.modal-header {
+  justify-content: space-around;
+}
+.modal-content {
+  background-color: var(--main-bg);
+  color: var(--white);
+}

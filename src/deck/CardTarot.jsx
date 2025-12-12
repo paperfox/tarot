@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import CardModal from '../CardModal';
-import Button from 'react-bootstrap/Button';
 
 function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
   const [cardFace, setCardFace] = useState('');
@@ -22,8 +21,8 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
         <div className="card-body">
           <h2 className="p">{layoutTitles}</h2>
           <div className="mb-3">
-            <Button
-              variant="link"
+            <button
+              className="btn-drawn-card"
               onClick={handleVisibility}
               aria-live="polite"
               aria-label={cardAriaLabel}
@@ -46,7 +45,7 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
                   </div>
                 </div>
               </div>
-            </Button>
+            </button>
           </div>
           <CardModal
             reverseCard={reverseCard}

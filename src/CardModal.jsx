@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 
 function CardModal({ dataImg, dataContent, modalDeck }) {
@@ -11,9 +10,8 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
 
   return (
     <>
-      <Button
-        variant="link"
-        className={`${modalDeck ? 'float-end btn-tarotcard' : 'float-end'}`}
+      <button
+        className={`${modalDeck ? 'float-end btn-tarotcard btn-link' : 'float-end btn-link'}`}
         onClick={handleShowModal}
         aria-label={`${
           modalDeck
@@ -37,7 +35,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
             alt={'Image of ' + dataContent.title + ' card'}
           />
         )}
-      </Button>
+      </button>
 
       <Modal show={show} onHide={handleShowModal} centered size={`${modalDeck ? 'lg' : ''}`}>
         <Modal.Header closeButton>
