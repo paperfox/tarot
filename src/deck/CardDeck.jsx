@@ -73,7 +73,7 @@ function CardDeck({ tarotContent }) {
   return (
     <div className="container text-center">
       <h1>Three Card Draw</h1>
-      <div className="mb-4">
+      <div className="pf--mb-1-half">
         <button
           className="tarot-deck"
           onClick={handleClick}
@@ -83,7 +83,7 @@ function CardDeck({ tarotContent }) {
         >
           <div className="row justify-content-center">
             <div className="col-auto">
-              <div className="mx-4 build-deck">
+              <div className="pf--mx-1-half build-deck">
                 <p>Draw a Card</p>
                 {Array.from({ length: 5 }, (_, i) => i).map((el) => (
                   <img src="/images/cards/back.svg" key={el} className="deck-card-stack" alt="" />
@@ -99,7 +99,7 @@ function CardDeck({ tarotContent }) {
           </div>
         </button>
       </div>
-      <div className="row justify-content-center mb-4">
+      <div className="row justify-content-center pf--mb-1-half">
         {createCard.map((exampleCard, index) => {
           return (
             <CardTarot
@@ -113,7 +113,7 @@ function CardDeck({ tarotContent }) {
         })}
       </div>
 
-      <button className="btn-primary mb-4" onClick={handleClickReset}>
+      <button className="btn-primary pf--mb-1-half" onClick={handleClickReset}>
         Reset
       </button>
     </div>

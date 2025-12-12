@@ -42,11 +42,13 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
           <Modal.Title as="h2">{dataContent.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="row justify-content-center px-2">
-            <div className={`${modalDeck ? 'col-md-4 col-5' : 'col-auto mb-2'}`}>
+          <div className="row justify-content-center pf--px-half">
+            <div className={`${modalDeck ? 'col-md-4 col-5' : 'col-auto pf--mb-half'}`}>
               <img
                 src={'/images/cards/' + dataImg + '.avif'}
-                className={`${modalDeck ? 'w-100 rounded mb-4' : 'w-100 rounded mb-sm-2'}`}
+                className={`${
+                  modalDeck ? 'w-100 rounded pf--mb-1-half' : 'w-100 rounded pf--mb-half'
+                }`}
                 alt={'Image of ' + dataContent.title + ' card'}
               />
             </div>
@@ -54,11 +56,11 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
             {modalDeck == false || (
               <div className="col-sm col-12">
                 <h3>{dataContent.uprightTitle}</h3>
-                <p className="mb-5">{dataContent.uprightCard}</p>
+                <p className="pf--mb-3">{dataContent.uprightCard}</p>
                 <h3>{dataContent.reverseTitle}</h3>
                 <p>{dataContent.reverseCard}</p>
                 {dataContent.link && (
-                  <p className="pt-4 text-right">
+                  <p className="pf--pt-1-half text-right">
                     <small>
                       Characters from{' '}
                       <a href={dataContent.link} target="_blank" rel="noreferrer">

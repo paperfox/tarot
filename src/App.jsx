@@ -24,7 +24,7 @@ function App() {
             alt="Back to Paperfox homepage"
           />
         </a>
-        <Tabs defaultActiveKey="TarotApp" id="paperfox-" className="mb-3 w-100">
+        <Tabs defaultActiveKey="TarotApp" id="paperfox-" className="pf--mb-1 w-100">
           <Tab eventKey="TarotApp" title="Deck">
             <CardDeck tarotContent={justCards} />
           </Tab>
