@@ -71,7 +71,7 @@ function CardDeck({ tarotContent }) {
   };
 
   return (
-    <div className="container-xxl text-center">
+    <div className="container text-center">
       <h1>Three Card Draw</h1>
       <div className="mb-4">
         <button

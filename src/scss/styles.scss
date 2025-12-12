@@ -85,7 +85,7 @@
   filter: brightness(0) invert(1);
 }
 
-.list-unstyled img[src$='.svg'] {
+ul.flex-center img[src$='.svg'] {
   height: 3.2rem;
   opacity: 0.8;
 
@@ -189,5 +189,48 @@ img[class*='_2'] {
   &:focus-visible {
     outline: $dotted-border;
     outline-offset: 2px;
+  }
+}
+
+ul {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  padding-left: 0;
+  list-style: none;
+
+  &.flex-center {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.container {
+  padding-inline: 1.6rem;
+  max-width: 1320px;
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  color: var(--main-bg);
+  word-wrap: break-word;
+  background-color: rgba(var(--black), 0.09);
+  background-clip: border-box;
+  border: 1px solid rgba(var(--black), 0.125);
+  border-radius: 0.25rem;
+
+  .card-body {
+    flex: 1 1 auto;
+    padding: 1rem;
+    color: var(--white);
+
+    .card-img {
+      width: 100%;
+    }
   }
 }

@@ -19,11 +19,11 @@ function CardList({ tarotContent }) {
   const filterButtons = [
     { label: 'Completed', status: 'Complete' },
     { label: 'Drafts', status: 'Draft' },
-    { label: 'Placeholders', status: 'None' }
+    { label: 'Placeholders', status: 'None' },
   ];
 
   return (
-    <div className="container-xxl">
+    <div className="container">
       <h1 className="text-center">Complete Card Listing</h1>
       <div className="row justify-content-center mb-4">
         <div className="col-auto">
@@ -31,7 +31,11 @@ function CardList({ tarotContent }) {
           <ButtonToolbar aria-label="Toolbar with button groups">
             <ButtonGroup className="me-2">
               {filterButtons.map((button) => (
-                <Button variant="primary" onClick={() => handleClickFilter(button.status)} key={button.label}>
+                <Button
+                  variant="primary"
+                  onClick={() => handleClickFilter(button.status)}
+                  key={button.label}
+                >
                   {button.label}
                 </Button>
               ))}
@@ -44,7 +48,8 @@ function CardList({ tarotContent }) {
           </ButtonToolbar>
           <p className="text-center">
             <small>
-              Cards matching filter: {filteredCards.length === 83 ? filteredCards.length - 5 : filteredCards.length}
+              Cards matching filter:{' '}
+              {filteredCards.length === 83 ? filteredCards.length - 5 : filteredCards.length}
             </small>
           </p>
         </div>
@@ -52,7 +57,7 @@ function CardList({ tarotContent }) {
 
       <div className="row justify-content-center mb-4">
         <div className="col-lg-2 col-md-3">
-          <ul className="list-unstyled h4 side-nav">
+          <ul className="side-nav">
             {Array.of('Major', 'Wands', 'Cups', 'Swords', 'Pentacles').map((suit) => (
               <li key={suit}>
                 <a href={`#${suit}-sectionTitle`}>
@@ -72,7 +77,9 @@ function CardList({ tarotContent }) {
         <div className="col-lg-10 col-md-9">
           {tarotFull.map((sectionHeading, index) => (
             <Fragment key={index}>
-              {sectionHeading.id && <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />}
+              {sectionHeading.id && (
+                <SectionDesc sectionData={sectionHeading} key={sectionHeading.id} />
+              )}
               {/* {console.log(sectionHeading)} */}
               {filteredCards
                 .filter((desc) => desc.title.includes(sectionHeading.title || null))

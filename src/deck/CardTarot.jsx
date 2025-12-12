@@ -32,14 +32,14 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
                   <div className="flip-card-front">
                     <img
                       src="/images/cards/back.svg"
-                      className="card-img-top"
+                      className="card-img"
                       alt="Back of Tarot Card"
                     />
                   </div>
                   <div className="flip-card-back">
                     <img
                       src={'/images/cards/' + dataImg + '.avif'}
-                      className={'card-img-top tarot-' + dataImg + reverseCard}
+                      className={'card-img tarot-' + dataImg + reverseCard}
                       alt=""
                     />
                   </div>

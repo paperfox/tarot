@@ -68,7 +68,7 @@ function CardDaily({ tarotContent }) {
   }; // end testing section
 
   return (
-    <div className="container-xxl">
+    <div className="container">
       <h1 className="text-center">Daily Card for {date}</h1>
       {disabled == false ? <p className="text-center">Reveal today's card below</p> : ''}
       <div className="row justify-content-center mb-4">

@@ -1,7 +1,7 @@
 .btn-close {
   background: transparent url(../../public/images/close.svg) no-repeat center;
-  width: 2rem;
-  height: 2rem;
+  width: 3rem;
+  height: 3rem;
   opacity: 1;
 
   &:hover {
@@ -23,12 +23,14 @@
     position: absolute;
     top: 2rem;
     right: 2rem;
+    border: none;
   }
 }
 
 .modal-header {
   justify-content: space-around;
 }
+
 .modal-content {
   background-color: var(--main-bg);
   color: var(--white);

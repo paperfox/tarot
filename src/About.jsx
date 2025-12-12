@@ -1,6 +1,6 @@
 function About() {
   return (
-    <div className="container-xxl">
+    <div className="container">
       <h1 className="text-center">About The App</h1>
       <div className="row justify-content-center mb-4">
         <div className="col-xl-5 col-lg-6 col-md-7 col-sm-10">
@@ -73,7 +73,7 @@ function About() {
           </div>
           <h2>Where to Find Me</h2>
           <p>Looking to connect? You can find me in any of these places.</p>
-          <ul className="list-unstyled d-flex justify-content-center">
+          <ul className="flex-center">
             <li className="m-3">
               <a href="https://paperfox.art" target="_blank" rel="noreferrer">
                 <img
