@@ -87,14 +87,14 @@ function CardDaily({ tarotContent }) {
                     <div className="flip-card-front">
                       <img
                         src="/images/cards/back.svg"
-                        className="card-img-top"
+                        className="card-img"
                         alt="Back of Tarot Card"
                       />
                     </div>
                     <div className="flip-card-back">
                       <img
                         src={cardNumber ? '/images/cards/' + cardNumber + '.avif' : ''}
-                        className={`card-img-top tarot-${cardNumber}_${binary}`}
+                        className={`card-img tarot-${cardNumber}_${binary}`}
                         aria-label={search}
                       />
                     </div>
