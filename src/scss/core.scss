@@ -70,7 +70,31 @@ footer {
   flex-shrink: 0;
 }
 
+img,
+svg {
+  vertical-align: middle;
+}
+
+hr {
+  margin: 1rem 0;
+  color: var(--white);
+  border: 0;
+  border-top: 1px solid var(--white);
+  opacity: 0.2;
+}
+
 /* Typography */
+
+%shared-heading-styles {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+%shared-body-styles {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
 h1:empty,
 h2:empty,
 h3:empty,
@@ -80,30 +104,37 @@ a:empty {
 }
 h1,
 h2 {
-  margin-top: 0;
+  @extend %shared-heading-styles;
   font-weight: 500;
 }
 h3 {
-  margin-top: 0;
+  @extend %shared-heading-styles;
   font-weight: 600;
 }
+h4 {
+  @extend %shared-heading-styles;
+  font-size: 1.6rem;
+  font-weight: 500;
+}
 h1 {
-  margin-top: 0;
   font-size: 3.4rem;
   margin-bottom: 3rem;
   padding-top: 8rem;
 }
 h2 {
-  margin-top: 0;
   font-size: 2.4rem;
   margin-bottom: 2.2rem;
 }
 h3 {
-  margin-top: 0;
   font-size: 1.8rem;
   margin-bottom: 1.6rem;
 }
+h4 {
+  margin-bottom: 0.5rem;
+}
+
 small {
+  @extend %shared-body-styles;
   font-size: 0.75em;
 }
 .side-nav li {
@@ -115,11 +146,15 @@ small {
 }
 p,
 .p,
-h4,
 ul li {
-  margin-top: 0;
+  @extend %shared-body-styles;
   font-size: 1.6rem;
 }
+p,
+.p {
+  margin-bottom: 1rem;
+}
+
 a {
   font-size: inherit;
 }
@@ -199,12 +234,35 @@ a,
   }
 }
 
+// Button resets
 button {
   border-radius: 0;
   font-family: inherit;
-  line-height: inherit;
+  line-height: 1.5;
   -webkit-appearance: button;
+  // Remove the inheritance of text transform in Firefox
   text-transform: none;
+
+  // 1. Prevent a WebKit bug where (2) destroys native `audio` and `video`
+  //    controls in Android 4.
+  // 2. Correct the inability to style clickable types in iOS and Safari.
+  // 3. Opinionated: add "hand" cursor to non-disabled button elements.
+
+  -webkit-appearance: button; // 2
+
+  @if $enable-button-pointers {
+    &:not(:disabled) {
+      cursor: pointer; // 3
+    }
+  }
+
+  // Explicitly remove focus outline in Chromium when it shouldn't be
+  // visible (e.g. as result of mouse click or touch tap). It already
+  // should be doing this automatically, but seems to currently be
+  // confused and applies its very visible two-tone outline anyway.
+  &:focus:not(:focus-visible) {
+    outline: 0;
+  }
 }
 
 @include media-breakpoint-down(sm) {
@@ -212,3 +270,5 @@ button {
     padding-top: 6.4rem;
   }
 }
+
+// many resets grabbed from https://github.com/twbs/bootstrap/blob/main/scss/_reboot.scss
