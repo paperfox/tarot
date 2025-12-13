@@ -25,10 +25,10 @@ function CardList({ tarotContent }) {
   return (
     <div className="container">
       <h1 className="text-center">Complete Card Listing</h1>
-      <div className="row justify-content-center pf--mb-1-half">
-        <div className="col-auto">
+      <div className="d-flex justify-content-center pf--mb-1-half">
+        <div>
           <p className="text-center">Filter cards based on state of artwork</p>
-          <ButtonToolbar aria-label="Toolbar with button groups">
+          <ButtonToolbar aria-label="Toolbar with button groups" class="d-flex">
             <ButtonGroup className="pf--mr-half">
               {filterButtons.map((button) => (
                 <Button
@@ -55,8 +55,8 @@ function CardList({ tarotContent }) {
         </div>
       </div>
 
-      <div className="row justify-content-center pf--mb-1-half">
-        <div className="col-lg-2 col-md-3">
+      <div className="d-flex justify-content-center pf--mb-1-half pf--pr-10">
+        <div className="list-left">
           <ul className="side-nav">
             {Array.of('Major', 'Wands', 'Cups', 'Swords', 'Pentacles').map((suit) => (
               <li key={suit}>
@@ -74,7 +74,7 @@ function CardList({ tarotContent }) {
             ))}
           </ul>
         </div>
-        <div className="col-lg-10 col-md-9">
+        <div className="list-right">
           {tarotFull.map((sectionHeading, index) => (
             <Fragment key={index}>
               {sectionHeading.id && (

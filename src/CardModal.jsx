@@ -42,8 +42,8 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
           <Modal.Title as="h2">{dataContent.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="row justify-content-center pf--px-half">
-            <div className={`${modalDeck ? 'col-md-4 col-5' : 'col-auto pf--mb-half'}`}>
+          <div className="d-flex justify-content-center pf--gap-1-half flex-column-md pf--px-half">
+            <div className={`${modalDeck ? 'modal-tarot-img' : 'pf--mb-half'}`}>
               <img
                 src={'/images/cards/' + dataImg + '.avif'}
                 className={`${
@@ -54,7 +54,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
             </div>
 
             {modalDeck == false || (
-              <div className="col-sm col-12">
+              <div className="modal-tarot-text">
                 <h3>{dataContent.uprightTitle}</h3>
                 <p className="pf--mb-3">{dataContent.uprightCard}</p>
                 <h3>{dataContent.reverseTitle}</h3>

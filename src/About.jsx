@@ -2,8 +2,8 @@ function About() {
   return (
     <div className="container">
       <h1 className="text-center">About The App</h1>
-      <div className="row justify-content-center pf--mb-1-half">
-        <div className="col-xl-5 col-lg-6 col-md-7 col-sm-10">
+      <div className="d-flex justify-content-center pf--mb-1-half">
+        <div className="about-container">
           <div className="pf--mb-3">
             <p>
               I'm having fun building a tarot app and eventually, slowly drawing the cards. As a

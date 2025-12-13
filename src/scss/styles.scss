@@ -102,14 +102,14 @@ img[class*='_2'] {
 } /* Info icon created by i cons from the noun project - tinyurl.com/47b8m4an */
 
 /* Responsive */
-@include media-breakpoint-up(md) {
+@media (min-width: 768px) {
   .side-nav {
     position: sticky;
     top: 4.8rem;
   }
 }
 
-@include media-breakpoint-down(md) {
+@media (max-width: 767.98px) {
   .side-nav {
     position: fixed;
     top: 4.2rem;
@@ -139,18 +139,31 @@ img[class*='_2'] {
   [id*='sectionTitle'] {
     scroll-margin-top: 9rem;
   }
+
+  .flex-column-md {
+    flex-direction: column;
+  }
 }
 
-@include media-breakpoint-down(sm) {
+@media (max-width: 575.98px) {
   .nav-tabs .nav-link {
     padding: 0.8rem 0.8rem;
   }
   .side-nav li a {
     font-size: 1.5rem;
   }
+
+  .flex-column-sm {
+    flex-direction: column;
+  }
+
+  .align-items-center {
+    align-items: center;
+  }
 }
 
-// replacing bs
+//
+// replacing bs, to be cleaned up later
 
 .btn-daily,
 .btn-drawn-card,
@@ -212,6 +225,61 @@ ul {
   margin-left: auto;
 }
 
+.about-container {
+  max-width: 53rem;
+}
+
+.daily-container {
+  max-width: 110rem;
+  width: 100%;
+}
+
+.list-container {
+  max-width: 81rem;
+  width: 100%;
+
+  @media (max-width: 1199.98px) {
+    max-width: 76rem;
+  }
+
+  @media (max-width: 767.98px) {
+    max-width: unset;
+  }
+}
+
+.list-art-container {
+  max-width: 27rem;
+  width: 100%;
+
+  @media (max-width: 1199.98px) {
+    max-width: 20rem;
+  }
+
+  @media (max-width: 767.98px) {
+    max-width: unset;
+  }
+}
+
+.list-left {
+  flex: 0 1 35rem;
+
+  &:has(.side-nav) {
+    @media (max-width: 767.98px) {
+      display: none;
+    }
+  }
+}
+
+.list-right {
+  flex: 0 1 81rem;
+
+  &:has(.list-container) {
+    @media (max-width: 767.98px) {
+      flex-basis: auto;
+    }
+  }
+}
+
 .card {
   position: relative;
   display: flex;
@@ -263,6 +331,9 @@ ul {
   &b-3 {
     margin-bottom: 3rem !important;
   }
+  &b-4 {
+    margin-bottom: 4rem !important;
+  }
   &b-half {
     margin-bottom: 0.5rem !important;
   }
@@ -274,6 +345,9 @@ ul {
   }
   &x-1-half {
     margin-inline: 1.5rem !important;
+  }
+  &l-1 {
+    margin-left: 1rem !important;
   }
 }
 
@@ -299,6 +373,32 @@ ul {
   &x-half {
     padding-inline: 0.5rem !important;
   }
+  &r-10 {
+    padding-right: 10rem;
+  }
+}
+
+.pf--gap {
+  &-1 {
+    gap: 1rem !important;
+  }
+  &-2 {
+    gap: 2rem !important;
+  }
+  &-1-half,
+  &-1-half-sm {
+    gap: 1.5rem !important;
+  }
+  &-1-half-sm {
+    @media (max-width: 575.98px) {
+      gap: 0 !important;
+    }
+  }
+}
+
+.btn-toolbar,
+.d-flex {
+  display: flex !important;
 }
 
 .justify-content-center {
@@ -309,10 +409,35 @@ ul {
   width: 100% !important;
 }
 
+.w-75,
+.modal-tarot-text {
+  width: 75%;
+}
+
 .text-center {
   text-align: center !important;
 }
 
 .float-end {
   float: right !important;
+}
+
+@media (max-width: 767.98px) {
+  .modal-tarot-img {
+    width: 50% !important;
+    margin-inline: auto;
+  }
+
+  .modal-tarot-text {
+    width: 100%;
+  }
+}
+
+.daily-card-img {
+  width: 100;
+}
+@media (min-width: 576px) {
+  .daily-card-img {
+    width: auto;
+  }
 }

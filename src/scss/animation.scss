@@ -100,7 +100,7 @@ button.tarot-deck {
     transform: translate(123%, 36.1rem);
   }
 
-  @include media-breakpoint-down(lg) {
+  @media (max-width: 991.98px) {
     &.draw-animation-0 {
       transform: translate(0, 31.7rem);
     }
@@ -112,7 +112,7 @@ button.tarot-deck {
     }
   }
 
-  @include media-breakpoint-down(sm) {
+  @media (max-width: 575.98px) {
     &.draw-animation-0 {
       transform: translate(0, 26.5rem);
     }
@@ -227,7 +227,7 @@ button.tarot-deck {
 }
 
 /* Responsive */
-@include media-breakpoint-between(sm, lg) {
+@media (min-width: 576px) and (max-width: 991.98px) {
   .flip-card,
   .build-deck,
   .deck-card-stack {
@@ -247,7 +247,7 @@ button.tarot-deck {
   }
 }
 
-@include media-breakpoint-down(sm) {
+@media (max-width: 575.98px) {
   .flip-card,
   .build-deck,
   .deck-card-stack {
@@ -256,10 +256,8 @@ button.tarot-deck {
   .build-deck {
     height: 20.8rem;
   }
-  [id*='TarotApp'] .row {
-    --bs-gutter-x: 0;
-  }
-  .btn.btn-link.btn-daily,
+
+  button.btn-daily,
   .daily-description.width {
     width: 100%;
   }

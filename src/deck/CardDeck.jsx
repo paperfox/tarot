@@ -81,25 +81,23 @@ function CardDeck({ tarotContent }) {
           aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'}
           disabled={counter === 3 ? true : false}
         >
-          <div className="row justify-content-center">
-            <div className="col-auto">
-              <div className="pf--mx-1-half build-deck">
-                <p>Draw a Card</p>
-                {Array.from({ length: 5 }, (_, i) => i).map((el) => (
-                  <img src="/images/cards/back.svg" key={el} className="deck-card-stack" alt="" />
-                ))}
-                <img
-                  src="/images/cards/back.svg"
-                  className={`deck-card-stack ${animateCard}`}
-                  alt=""
-                  id="top"
-                />
-              </div>
+          <div className="d-flex justify-content-center">
+            <div className="pf--mx-1-half build-deck">
+              <p>Draw a Card</p>
+              {Array.from({ length: 5 }, (_, i) => i).map((el) => (
+                <img src="/images/cards/back.svg" key={el} className="deck-card-stack" alt="" />
+              ))}
+              <img
+                src="/images/cards/back.svg"
+                className={`deck-card-stack ${animateCard}`}
+                alt=""
+                id="top"
+              />
             </div>
           </div>
         </button>
       </div>
-      <div className="row justify-content-center pf--mb-1-half">
+      <div className="d-flex justify-content-center pf--gap-1-half-sm pf--mb-1-half">
         {createCard.map((exampleCard, index) => {
           return (
             <CardTarot
