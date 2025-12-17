@@ -28,7 +28,7 @@ function CardList({ tarotContent }) {
       <div className="d-flex justify-content-center pf--mb-1-half">
         <div>
           <p className="text-center">Filter cards based on state of artwork</p>
-          <ButtonToolbar aria-label="Toolbar with button groups" class="d-flex">
+          <ButtonToolbar aria-label="Toolbar with button groups" className="d-flex">
             <ButtonGroup className="pf--mr-half">
               {filterButtons.map((button) => (
                 <Button

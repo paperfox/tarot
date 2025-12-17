@@ -1,0 +1,66 @@
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  position: fixed;
+  z-index: 1030;
+  font-size: 1.6rem;
+}
+
+.nav-tabs {
+  background-color: rgba(var(--nav-bg-alpha), 0.9);
+
+  li:first-of-type {
+    margin-left: 6.4rem;
+  }
+
+  .nav-link {
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: var(--accent);
+    border: 0.1rem solid transparent;
+    border-bottom: 0.2rem solid transparent;
+    padding: 0.8rem 1.6rem;
+    background-color: transparent;
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+
+    &:focus-visible {
+      outline: $dotted-border;
+    }
+    &.active {
+      color: var(--white);
+    }
+
+    &.active,
+    &:focus,
+    &:hover,
+    &:focus-visible {
+      background-color: rgb(var(--black));
+      border: 0.1rem solid transparent;
+      border-bottom: 0.2rem solid var(--accent);
+    }
+  }
+}
+
+@media (max-width: 575.98px) {
+  .nav-tabs .nav-link {
+    padding: 0.8rem 0.8rem;
+  }
+}
+
+// Tabbable tabs
+//
+// Hide tabbable panes to start, show them when `.active`
+
+.tab-content {
+  > .tab-pane {
+    display: none;
+  }
+  > .active {
+    display: block;
+  }
+}

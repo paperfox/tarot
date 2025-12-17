@@ -1,7 +1,7 @@
-@import './bootstrap-imports';
 @import './variables';
 @import './core';
 @import './modals';
+@import './navtabs.scss';
 @import './animation';
 
 /* Buttons and Nav Tabs */
@@ -22,47 +22,8 @@
   }
 }
 
-.nav-tabs {
-  background-color: rgba(var(--nav-bg-alpha), 0.9);
-  font-size: 1.6rem;
-  border-bottom: none;
-  position: fixed;
-  z-index: 1030;
-  display: flex;
-
-  .nav-link {
-    font-weight: 500;
-    font-size: 1.6rem;
-    color: var(--accent);
-    border: 0.1rem solid transparent;
-    border-bottom: 0.2rem solid transparent;
-    padding: 0.8rem 1.6rem;
-    background-color: transparent;
-
-    &:focus-visible {
-      outline: $dotted-border;
-    }
-    &.active {
-      color: var(--white);
-    }
-
-    &.active,
-    &:focus,
-    &:hover,
-    &:focus-visible {
-      background-color: rgb(var(--black));
-      border: 0.1rem solid transparent;
-      border-bottom: 0.2rem solid var(--accent);
-    }
-  }
-}
-
 .btn-tarotcard {
   opacity: 1;
-}
-
-.nav-tabs li:first-of-type {
-  margin-left: 6.4rem;
 }
 
 /* Images */
@@ -154,9 +115,6 @@ img[class*='_2'] {
 }
 
 @media (max-width: 575.98px) {
-  .nav-tabs .nav-link {
-    padding: 0.8rem 0.8rem;
-  }
   .side-nav li a {
     font-size: 1.5rem;
   }
