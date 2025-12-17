@@ -107,6 +107,10 @@ img[class*='_2'] {
 
 /* Responsive */
 @media (min-width: 768px) {
+  div:has(> .side-nav) {
+    margin-right: 4rem;
+  }
+
   .side-nav {
     position: sticky;
     top: 4.8rem;
@@ -264,14 +268,9 @@ ul {
   }
 }
 
-.list-left {
+.list-left,
+.side-nav {
   flex: 0 1 35rem;
-
-  &:has(.side-nav) {
-    @media (max-width: 767.98px) {
-      display: none;
-    }
-  }
 }
 
 .list-right {
@@ -376,9 +375,6 @@ ul {
   }
   &x-half {
     padding-inline: 0.5rem !important;
-  }
-  &r-10 {
-    padding-right: 10rem;
   }
 }
 

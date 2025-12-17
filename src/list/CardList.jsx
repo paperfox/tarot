@@ -55,8 +55,8 @@ function CardList({ tarotContent }) {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center pf--mb-1-half pf--pr-10">
-        <div className="list-left">
+      <div className="d-flex justify-content-center pf--mb-1-half">
+        <div>
           <ul className="side-nav">
             {Array.of('Major', 'Wands', 'Cups', 'Swords', 'Pentacles').map((suit) => (
               <li key={suit}>
