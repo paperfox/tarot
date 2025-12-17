@@ -28,12 +28,16 @@
   border-bottom: none;
   position: fixed;
   z-index: $zindex-fixed;
+  display: flex;
 
   .nav-link {
     font-weight: 500;
+    font-size: 1.6rem;
     color: var(--accent);
+    border: 0.1rem solid transparent;
     border-bottom: 0.2rem solid transparent;
     padding: 0.8rem 1.6rem;
+    background-color: transparent;
 
     &:focus-visible {
       outline: $dotted-border;

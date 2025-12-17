@@ -1,8 +1,125 @@
+// bootstrap modal
+.modal {
+  --pf-modal-zindex: 1050;
+  --pf-modal-width: 50rem;
+  --pf-modal-padding: 1.5rem;
+  --pf-modal-margin: 0.5rem;
+
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--pf-modal-zindex);
+  display: none;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  outline: 0;
+}
+
+// Shell div to position the modal with bottom padding
+.modal-dialog {
+  position: relative;
+  width: auto;
+  margin: var(--pf-modal-margin);
+  // allow clicks to pass through for custom click handling to close modal
+  pointer-events: none;
+
+  // When fading in the modal, animate it to slide down
+  .modal.fade & {
+    transform: $modal-fade-transform;
+    @include transition($modal-transition);
+  }
+  .modal.show & {
+    transform: $modal-show-transform;
+  }
+
+  // When trying to close, animate focus to scale
+  .modal.modal-static & {
+    transform: $modal-scale-transform;
+  }
+}
+
+.modal-dialog-centered {
+  display: flex;
+  align-items: center;
+  min-height: calc(100% - var(--pf-modal-margin) * 2);
+}
+
+// Actual modal
+.modal-content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%; // Ensure `.modal-content` extends the full width of the parent `.modal-dialog`
+  // counteract the pointer-events: none; in the .modal-dialog
+  pointer-events: auto;
+  background-clip: padding-box;
+  border-radius: 0.5rem;
+  box-shadow: 0 0.5rem 5px 1rem rgba(0, 0, 0, 0.15);
+  outline: 0;
+}
+
+// Modal background
+.modal-backdrop {
+  --pf-backdrop-zindex: 1050;
+  --pf-backdrop-bg: rgb(var(--black));
+  --pf-backdrop-opacity: 0.5;
+
+  @include overlay-backdrop(
+    var(--pf-backdrop-zindex),
+    var(--pf-backdrop-bg),
+    var(--pf-backdrop-opacity)
+  );
+}
+
+// Modal header
+// Top section of the modal w/ title and dismiss
+
+// Title text within header
+.modal-title {
+  margin-bottom: 0;
+  line-height: 1.5;
+}
+
+// Modal body
+// Where all modal content resides (sibling of .modal-header and .modal-footer)
+.modal-body {
+  position: relative;
+  flex: 1 1 auto;
+  padding: var(--pf-modal-padding);
+}
+
+// Scale up the modal
+@media (min-width: 576px) {
+  .modal {
+    --pf-modal-margin: 1.75rem;
+  }
+
+  // Automatically set modal's width for larger viewports
+  .modal-dialog {
+    max-width: var(--pf-modal-width);
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (min-width: 992px) {
+  .modal-lg {
+    --pf-modal-width: 80rem;
+  }
+}
+
+// custom
+
 .btn-close {
   background: transparent url(../../public/images/close.svg) no-repeat center;
   width: 3rem;
   height: 3rem;
   opacity: 1;
+  padding: 0.5rem;
+  margin: -0.5rem;
+  margin-left: auto;
 
   &:hover {
     filter: grayscale(100%) brightness(400%);
@@ -29,6 +146,10 @@
 
 .modal-header {
   justify-content: space-around;
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: var(--pf-modal-padding) 0 0.5rem;
 }
 
 .modal-content {

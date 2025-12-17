@@ -14,9 +14,6 @@
   --border-tarot-card: rgba(253, 184, 19, 0.3);
   --white: #ffffff;
   --black: 0, 0, 0;
-
-  //Bootstrap CSS variable overrides
-  --#{$prefix}border-color: transparent;
 }
 
 html {
