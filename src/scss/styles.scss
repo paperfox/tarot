@@ -27,7 +27,7 @@
   font-size: 1.6rem;
   border-bottom: none;
   position: fixed;
-  z-index: $zindex-fixed;
+  z-index: 1030;
   display: flex;
 
   .nav-link {
@@ -70,7 +70,7 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $zindex-offcanvas-backdrop;
+  z-index: 1040;
   margin: 0.2rem;
   padding: 0.6rem 1rem 0.3rem;
   border-bottom: 0.2rem solid transparent;
@@ -120,7 +120,7 @@ img[class*='_2'] {
     display: flex;
     width: 100%;
     background-color: rgba(var(--nav-bg-alpha), 0.8);
-    z-index: $zindex-sticky;
+    z-index: 1020;
     margin: 0 -1.6rem;
 
     li {

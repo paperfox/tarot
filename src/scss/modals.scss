@@ -27,16 +27,20 @@
 
   // When fading in the modal, animate it to slide down
   .modal.fade & {
-    transform: $modal-fade-transform;
-    @include transition($modal-transition);
+    transform: translate(0, -50px);
+    transition: transform 0.3s ease-out;
+
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
   }
   .modal.show & {
-    transform: $modal-show-transform;
+    transform: none;
   }
 
   // When trying to close, animate focus to scale
   .modal.modal-static & {
-    transform: $modal-scale-transform;
+    transform: scale(1.02);
   }
 }
 
@@ -66,11 +70,21 @@
   --pf-backdrop-bg: rgb(var(--black));
   --pf-backdrop-opacity: 0.5;
 
-  @include overlay-backdrop(
-    var(--pf-backdrop-zindex),
-    var(--pf-backdrop-bg),
-    var(--pf-backdrop-opacity)
-  );
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--pf-backdrop-zindex);
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--pf-backdrop-bg);
+
+  // Fade for backdrop
+  &.fade {
+    opacity: 0;
+  }
+  &.show {
+    opacity: var(--pf-backdrop-opacity);
+  }
 }
 
 // Modal header
