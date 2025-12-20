@@ -2,7 +2,7 @@ function About() {
   return (
     <div className="container">
       <h1 className="text-center">About The App</h1>
-      <div className="d-flex justify-content-center mb-1-half">
+      <div className="flex-center mb-1-half">
         <div className="about-container">
           <div className="mb-3">
             <p>

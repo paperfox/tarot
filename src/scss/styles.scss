@@ -6,8 +6,7 @@
 
 /* Buttons and Nav Tabs */
 .btn-group > {
-  .btn-group:not(:last-child) > .btn,
-  .btn:not(:last-child):not(.dropdown-toggle) {
+  .btn:not(:last-child) {
     &,
     &:hover,
     &:focus,
@@ -16,14 +15,60 @@
     }
   }
 
-  .btn-group:not(:first-child) > .btn,
-  :not(.btn-check) + .btn {
+  .btn:active,
+  .btn:focus {
+    box-shadow: inset 0 0 0 0.1rem var(--accent);
+  }
+
+  .btn + .btn {
     border-left: $dashed-border;
   }
 }
 
-.btn-tarotcard {
-  opacity: 1;
+button {
+  &.btn-daily {
+    margin-inline: 0.8rem;
+
+    &:disabled {
+      opacity: 1;
+    }
+  }
+
+  &.tarot-deck:disabled {
+    opacity: 0.6;
+  }
+}
+
+.btn-primary {
+  background-color: transparent;
+  padding: 0.5rem 0.75rem;
+  font-size: 1.4rem;
+  font-weight: 500;
+
+  &,
+  &:hover,
+  &:focus,
+  &:active {
+    min-width: 3rem;
+    border: 1px solid var(--accent);
+    border-radius: 0;
+    color: var(--accent);
+  }
+
+  &:focus,
+  &:active {
+    background-color: rgba(var(--black), 1);
+  }
+
+  &:hover {
+    background-color: rgba(var(--black), 0.4);
+    box-shadow: inset 0 0 0 0.1rem var(--accent);
+  }
+
+  &:focus-visible {
+    outline: $dotted-border;
+    outline-offset: 2px;
+  }
 }
 
 /* Images */
@@ -65,20 +110,6 @@ img[class*='_2'] {
 .info-icon {
   width: 2.4rem;
 } /* Info icon created by i cons from the noun project - tinyurl.com/47b8m4an */
-
-button {
-  &.btn-daily {
-    margin-inline: 0.8rem;
-
-    &:disabled {
-      opacity: 1;
-    }
-  }
-
-  &.tarot-deck:disabled {
-    opacity: 0.6;
-  }
-}
 
 /* Responsive */
 @media (min-width: 768px) {
@@ -145,48 +176,11 @@ button {
 //
 // replacing bs, to be cleaned up later
 
-.btn-primary {
-  background-color: transparent;
-  padding: 0.5rem 0.75rem;
-  font-size: 1.4rem;
-  font-weight: 500;
-
-  &,
-  &:hover,
-  &:focus,
-  &:active {
-    min-width: 3rem;
-    border: 1px solid var(--accent);
-    border-radius: 0;
-    color: var(--accent);
-  }
-
-  &:focus,
-  &:active {
-    background-color: rgba(var(--black), 1);
-  }
-
-  &:hover {
-    background-color: rgba(var(--black), 0.4);
-    box-shadow: inset 0 0 0 0.1rem var(--accent);
-  }
-
-  &:focus-visible {
-    outline: $dotted-border;
-    outline-offset: 2px;
-  }
-}
-
 ul {
   margin-top: 0;
   margin-bottom: 1rem;
   padding-left: 0;
   list-style: none;
-
-  &.flex-center {
-    display: flex;
-    justify-content: center;
-  }
 }
 
 .container {
@@ -308,12 +302,8 @@ ul {
   }
 }
 
-.btn-toolbar,
-.d-flex {
+.flex-center {
   display: flex;
-}
-
-.justify-content-center {
   justify-content: center;
 }
 
@@ -334,6 +324,10 @@ ul {
   float: right;
 }
 
+.daily-card-img {
+  width: auto;
+}
+
 @media (max-width: 767.98px) {
   .modal-tarot-img {
     width: 50%;
@@ -342,14 +336,5 @@ ul {
 
   .modal-tarot-text {
     width: 100%;
-  }
-}
-
-.daily-card-img {
-  width: 100;
-}
-@media (min-width: 576px) {
-  .daily-card-img {
-    width: auto;
   }
 }

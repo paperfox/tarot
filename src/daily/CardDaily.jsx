@@ -71,9 +71,9 @@ function CardDaily({ tarotContent }) {
     <div className="container">
       <h1 className="text-center">Daily Card for {date}</h1>
       {disabled == false ? <p className="text-center">Reveal today's card below</p> : ''}
-      <div className="d-flex justify-content-center mb-1-half">
+      <div className="flex-center mb-1-half">
         <div className="daily-container">
-          <div className="d-flex justify-content-center flex-column-sm align-items-center mb-1-half">
+          <div className="flex-center flex-column-sm align-items-center mb-1-half">
             <div className="daily-card-img mb-1-half">
               <button
                 className="btn-daily"

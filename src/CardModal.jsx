@@ -11,7 +11,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
   return (
     <>
       <button
-        className={`${modalDeck ? 'float-end btn-tarotcard btn-link' : 'float-end btn-link'}`}
+        className="float-end btn-link"
         onClick={handleShowModal}
         aria-label={`${
           modalDeck
@@ -42,7 +42,7 @@ function CardModal({ dataImg, dataContent, modalDeck }) {
           <Modal.Title as="h2">{dataContent.title}</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-          <div className="d-flex justify-content-center gap-1-half flex-column-md px-half">
+          <div className="flex-center gap-1-half flex-column-md px-half">
             <div className={`${modalDeck ? 'modal-tarot-img' : 'mb-half'}`}>
               <img
                 src={'/images/cards/' + dataImg + '.avif'}

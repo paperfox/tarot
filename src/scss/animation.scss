@@ -137,7 +137,7 @@ button.tarot-deck {
   transition: all 1s ease 100ms;
 
   .card-body {
-    .p {
+    p {
       color: transparent;
       transition: color 1s ease 50ms;
     }
@@ -151,7 +151,7 @@ button.tarot-deck {
     border-color: rgba(var(--black), 0.125);
 
     .card-body {
-      .p {
+      p {
         color: var(--white);
       }
       .btn-drawn-card {

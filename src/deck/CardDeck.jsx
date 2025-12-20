@@ -81,7 +81,7 @@ function CardDeck({ tarotContent }) {
           aria-label={'Draw ' + deckLabel + 'card from Tarot Deck'}
           disabled={counter === 3 ? true : false}
         >
-          <div className="d-flex justify-content-center">
+          <div className="flex-center">
             <div className="mx-1-half build-deck">
               <p>Draw a Card</p>
               {Array.from({ length: 5 }, (_, i) => i).map((el) => (
@@ -97,7 +97,7 @@ function CardDeck({ tarotContent }) {
           </div>
         </button>
       </div>
-      <div className="d-flex justify-content-center gap-1-half-sm mb-1-half">
+      <div className="flex-center gap-1-half-sm mb-1-half">
         {createCard.map((exampleCard, index) => {
           return (
             <CardTarot

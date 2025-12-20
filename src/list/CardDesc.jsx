@@ -3,7 +3,7 @@ import CardModal from '../CardModal';
 function CardDesc({ dataContent }) {
   return (
     <>
-      <div className="d-flex gap-1-half justify-content-center">
+      <div className="flex-center gap-1-half">
         <div className="list-left mb-2">
           <CardModal dataImg={dataContent.cardValue} dataContent={dataContent} modalDeck={false} />
         </div>
@@ -25,7 +25,7 @@ function CardDesc({ dataContent }) {
           )}
         </div>
       </div>
-      <div className="d-flex justify-content-center">
+      <div className="flex-center">
         <hr className="w-75 mb-4" />
       </div>
     </>

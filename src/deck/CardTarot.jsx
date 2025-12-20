@@ -19,7 +19,7 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
     <div id={'tarot-content-' + dataImg + reverseCard}>
       <div className={`card ${showCard}`}>
         <div className="card-body">
-          <h2 className="p">{layoutTitles}</h2>
+          <p>{layoutTitles}</p>
           <div className="mb-1">
             <button
               className="btn-drawn-card"

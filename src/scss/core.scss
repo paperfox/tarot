@@ -82,14 +82,6 @@ hr {
 }
 
 /* Typography */
-
-h1:empty,
-h2:empty,
-h3:empty,
-p:empty,
-a:empty {
-  display: none;
-}
 h1,
 h2 {
   @extend %shared-heading-styles;
@@ -108,6 +100,10 @@ h1 {
   font-size: 3.4rem;
   margin-bottom: 3rem;
   padding-top: 8rem;
+
+  @media (max-width: 575.98px) {
+    padding-top: 6.4rem;
+  }
 }
 h2 {
   font-size: 2.4rem;
@@ -129,17 +125,12 @@ small {
   font-size: 1.6rem;
   margin-bottom: 1.6rem;
 }
-.p {
-  margin-bottom: 0.8rem;
-}
 p,
-.p,
 ul li {
   @extend %shared-body-styles;
   font-size: 1.6rem;
 }
-p,
-.p {
+p {
   margin-bottom: 1rem;
 }
 
@@ -151,12 +142,10 @@ a {
   font-weight: 500;
 }
 p,
-.p,
 a {
   font-weight: 400;
 }
 p,
-.p,
 small {
   color: var(--text-body);
 }
@@ -207,12 +196,6 @@ a {
   &:hover {
     color: var(--link);
     text-decoration: underline;
-  }
-}
-
-@media (max-width: 575.98px) {
-  h1 {
-    padding-top: 6.4rem;
   }
 }
 
