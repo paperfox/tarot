@@ -71,10 +71,10 @@ function CardDaily({ tarotContent }) {
     <div className="container">
       <h1 className="text-center">Daily Card for {date}</h1>
       {disabled == false ? <p className="text-center">Reveal today's card below</p> : ''}
-      <div className="d-flex justify-content-center pf--mb-1-half">
+      <div className="d-flex justify-content-center mb-1-half">
         <div className="daily-container">
-          <div className="d-flex justify-content-center flex-column-sm align-items-center pf--mb-1-half">
-            <div className="daily-card-img pf--mb-1-half">
+          <div className="d-flex justify-content-center flex-column-sm align-items-center mb-1-half">
+            <div className="daily-card-img mb-1-half">
               <button
                 className="btn-daily"
                 onClick={() => handleClick()}
@@ -102,7 +102,7 @@ function CardDaily({ tarotContent }) {
                 </div>
               </button>
             </div>
-            <div className="pf--ml-1 pf--mb-1-half daily-description demand-2">
+            <div className="ml-1 mb-1-half daily-description demand-2">
               <div className={loading}>
                 {disabled == true ? (
                   <span className="visually-hidden" aria-live="polite" aria-busy="true">

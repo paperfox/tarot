@@ -1,2 +1,35 @@
-$dashed-border: .1rem dashed var(--accent);
-$dotted-border: .1rem dotted var(--accent);
+$dashed-border: 0.1rem dashed var(--accent);
+$dotted-border: 0.1rem dotted var(--accent);
+
+%shared-heading-styles {
+  margin-top: 0;
+  line-height: 1.2;
+}
+
+%shared-body-styles {
+  margin-top: 0;
+  line-height: 1.5;
+}
+
+$utility-props: (
+  'm': 'margin',
+  'p': 'padding',
+  'gap': 'gap',
+);
+
+$spacing-sizes: (
+  'half': 0.5rem,
+  '1': 1rem,
+  '1-half': 1.5rem,
+  '2': 2rem,
+  '3': 3rem,
+  '4': 4rem,
+);
+
+$spacing-directions: (
+  'b': 'bottom',
+  't': 'top',
+  'r': 'right',
+  'l': 'left',
+  'x': 'inline',
+);

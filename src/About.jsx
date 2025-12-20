@@ -2,9 +2,9 @@ function About() {
   return (
     <div className="container">
       <h1 className="text-center">About The App</h1>
-      <div className="d-flex justify-content-center pf--mb-1-half">
+      <div className="d-flex justify-content-center mb-1-half">
         <div className="about-container">
-          <div className="pf--mb-3">
+          <div className="mb-3">
             <p>
               I'm having fun building a tarot app and eventually, slowly drawing the cards. As a
               developer and designer professionally and an artist by passion it gives me a chance to
@@ -52,7 +52,7 @@ function About() {
               , by Stephanie Law coming out, so I'm excited for that!
             </p>
           </div>
-          <div className="pf--mb-3">
+          <div className="mb-3">
             <h2>About the Images</h2>
             <p>
               Images on this site are either my own work or from the Rider-Waite-Smith Tarot Deck
@@ -74,7 +74,7 @@ function About() {
           <h2>Where to Find Me</h2>
           <p>Looking to connect? You can find me in any of these places.</p>
           <ul className="flex-center">
-            <li className="pf--m-1">
+            <li className="m-1">
               <a href="https://paperfox.art" target="_blank" rel="noreferrer">
                 <img
                   src="https://paperfox.github.io/images/paperfoxlogo-bold.svg"
@@ -83,7 +83,7 @@ function About() {
                 />
               </a>
             </li>
-            <li className="pf--m-1">
+            <li className="m-1">
               <a
                 href="https://www.instagram.com/paperfoxmakesart/"
                 target="_blank"
@@ -92,7 +92,7 @@ function About() {
                 <img src="https://paperfox.github.io/images/instagramlogo.svg" alt="Instagram" />
               </a>
             </li>
-            <li className="pf--m-1">
+            <li className="m-1">
               <a href="https://cara.app/paperfox" target="_blank" rel="noreferrer">
                 <img
                   src="https://paperfox.github.io/images/cara-app-logo-circle-White.svg"
@@ -100,12 +100,12 @@ function About() {
                 />
               </a>
             </li>
-            <li className="pf--m-1">
+            <li className="m-1">
               <a href="https://github.com/paperfox" target="_blank" rel="noreferrer">
                 <img src="https://paperfox.github.io/images/github-mark.svg" alt="GitHub" />
               </a>
             </li>
-            <li className="pf--m-1">
+            <li className="m-1">
               <a
                 href="https://www.linkedin.com/in/nathaliegarfinkle/"
                 target="_blank"

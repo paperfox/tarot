@@ -20,7 +20,7 @@ function CardTarot({ reverseCard, dataImg, dataContent, layoutTitles }) {
       <div className={`card ${showCard}`}>
         <div className="card-body">
           <h2 className="p">{layoutTitles}</h2>
-          <div className="pf--mb-1">
+          <div className="mb-1">
             <button
               className="btn-drawn-card"
               onClick={handleVisibility}
