@@ -123,18 +123,6 @@ button.tarot-deck {
       transform: translate(119%, 26.5rem);
     }
   }
-
-  @media (max-width: 431.98px) {
-    &.draw-animation-0 {
-      transform: translate(0, 130%);
-    }
-    &.draw-animation-1 {
-      transform: translate(60%, 130%);
-    }
-    &.draw-animation-2 {
-      transform: translate(0%, 280%);
-    }
-  }
 }
 
 #top.draw-animation-time {
@@ -266,5 +254,16 @@ button.tarot-deck {
   }
   .btn-daily .flip-card {
     margin: auto;
+  }
+}
+
+@media (max-width: 431.98px) {
+  .flip-card,
+  .build-deck,
+  .deck-card-stack {
+    width: 10rem;
+  }
+  button.tarot-deck p {
+    width: 95%;
   }
 }
