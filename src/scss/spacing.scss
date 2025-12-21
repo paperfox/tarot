@@ -1,0 +1,25 @@
+// Spacing helpers
+@each $prefix, $prop in $utility-props {
+  .#{$prefix} {
+    @each $size-key, $size-value in $spacing-sizes {
+      &-#{$size-key} {
+        #{$prop}: $size-value;
+      }
+    }
+
+    @each $dir-key, $dir-value in $spacing-directions {
+      @each $size-key, $size-value in $spacing-sizes {
+        &#{$dir-key}-#{$size-key} {
+          #{$prop}-#{$dir-value}: $size-value;
+        }
+      }
+    }
+
+    &-1-half-sm {
+      #{$prop}: 1.5rem;
+      @media (max-width: 575.98px) {
+        #{$prop}: 0;
+      }
+    }
+  }
+}

@@ -74,7 +74,7 @@ function CardDaily({ tarotContent }) {
       <div className="flex-center mb-1-half">
         <div className="daily-container">
           <div className="flex-center flex-column-sm align-items-center mb-1-half">
-            <div className="daily-card-img mb-1-half">
+            <div className="mb-1-half">
               <button
                 className="btn-daily"
                 onClick={() => handleClick()}
